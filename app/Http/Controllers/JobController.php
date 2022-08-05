@@ -6,6 +6,7 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\Job;
 use App\Models\Tag;
+use DB;
 
 class JobController extends Controller
 {
@@ -43,5 +44,60 @@ class JobController extends Controller
 
         return view('jobs.tag', compact('jobs', 'tag'));
     }
+
+    public function CategoryAVG()
+    {
+        $categoriesProm =DB:: select("call spSalarioCategorias()");
+        return response()->json($categoriesProm);
+    }
+
+    public function SalaryTagsAVG()
+    {
+        $tagsProm =DB:: select("call spAVGSalarioTags()");
+        return response()->json($tagsProm);
+    }
+
+    public function JobCategories()
+    {
+        $jobCategories =DB:: select("call spJobsCategorias()");
+        return response()->json($jobCategories);
+    }
+
+    public function JobTags()
+    {
+        $jobTags =DB:: select("call spJobTags()");
+        return response()->json($jobTags);
+    }
+
+    public function TotalTrabajos()
+    {
+        $total =DB:: select("call spTotalTrabajos()");
+        return response()->json($total);
+    }
+    public function Wages()
+    {
+        $wage =DB:: select("call spWages()");
+        return response()->json($wage);
+    }  
+    
+    public function LatestWorks()
+    {
+        $LWorks =DB:: select("call spLatestWorks()");
+        return response()->json($LWorks);
+    }
+
+    public function LatestCategories()
+    {
+        $LCategories =DB:: select("call spLatestCategories()");
+        return response()->json($LCategories);
+    }
+
+    public function LatestTags()
+    {
+        $LTags =DB:: select("call spLatestTags()");
+        return response()->json($LTags);
+    }
+    
+    
 
 }
