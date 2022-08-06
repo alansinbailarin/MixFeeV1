@@ -6,6 +6,7 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\Job;
 use App\Models\Tag;
+use Illuminate\Support\Facades\Cache;
 
 class JobController extends Controller
 {
@@ -13,6 +14,7 @@ class JobController extends Controller
         // $allCounter = Job::all()->count(); <- 'allCounter' ese va en el compact
         $counting = Job::where('status', 2)->count();
         $jobs = Job::where('status', 2)->latest('id')->paginate(12);
+        
 
         return view('jobs.index', compact('jobs', 'counting'));
     }

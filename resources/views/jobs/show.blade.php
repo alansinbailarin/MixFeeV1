@@ -6,7 +6,7 @@
                     <article class="card-body m-8 ">
                         <div class="flex items-start">
                             <div class="flex items-start">
-                                <h1 class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-pink-500">{{$job->title}}</h1>
+                                <h1 class="text-2xl font-bold text-blue-600">{{$job->title}}</h1>
                                 
                             </div>
                             {{-- <p class="ml-auto text-sm text-gray-400">Publicado hace {{ $job->created_at->diffForHumans()}}</p> --}}
@@ -33,7 +33,7 @@
                             <div class="mt-5">
                                 <p class="text-gray-500 font-semibold">Especialidades</p>
                                 @foreach ($job->tags as $tag)
-                                    <span class="text-sm bg-blue-50 py-1 px-4 rounded-full text-blue-300 mt-2 inline-block">{{ $tag->name }}</span>
+                                    <a href="{{route('jobs.tag', $tag)}}" class="text-sm bg-blue-50 py-1 px-4 rounded-full text-blue-300 mt-2 inline-block">{{ $tag->name }}</a>
                                 @endforeach                        
                             </div>
                             <div class="mt-5">
@@ -74,7 +74,7 @@
                             <p class="text-base text-gray-500 justify mt-1">{{$job->requirements}}</p>
                         </div>
                         <div class="mt-5">
-                            <span class="font-semibold text-gray-600 text-lg">Requisitos</span>
+                            <span class="font-semibold text-gray-600 text-lg">Categoria</span>
                             <p class="text-base text-gray-500 justify mt-1">{{$job->category->name}}</p>
                         <div class="mt-8">
                             <div class="mt-8">

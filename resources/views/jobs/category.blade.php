@@ -1,12 +1,12 @@
 <x-app-layout>
 <div class="max-w-6xl mx-auto mt-10 px-2 sm:px-6 lg:px-8">
-    <h1 class="text-center mt-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-pink-500 font-bold text-2xl">{{$category->name}}</h1>
+    <h1 class="text-center mt-6 text-gray-600 font-bold text-2xl">Categoria: {{$category->name}}</h1>
             @foreach ($jobs as $job)
             <section class="card mt-10 mb-10 bg-white border border-gray-100 shadow-md rounded-md md:mr-3">
                 <article class="card-body m-8 ">
                     <div class="flex items-start">
                         <div class="flex items-start">
-                            <a href="{{route('jobs.show', $job)}}" class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-pink-500">{{$job->title}}</a>
+                            <a href="{{route('jobs.show', $job)}}" class="text-2xl font-bold text-blue-600">{{$job->title}}</a>
                             
                         </div>
                         {{-- <p class="ml-auto text-sm text-gray-400">Publicado hace {{ $job->created_at->diffForHumans()}}</p> --}}
