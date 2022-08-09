@@ -153,7 +153,7 @@
                 </div>
                 <div class="form-group">
                     {!! Form::label('salary', 'Salario:') !!}
-                    {!! Form::select('salary', ['1,000 > 5,000' => 'De 1,000 a 5,000', '5,000 > 8,000' => 'De 5,000 a 8,000', '8,000 > 15,000' => 'De 8,000 a 15,000', '15,000 > 20,000' => 'De 15,000 a 20,000', '20,000 > 25,000' => 'De 20,000 a 25,000', '25,000 > 30,000' => 'De 25,000 a 30,000', '> 30,000' => 'Mas de 30,000'], null, ['class' => 'form-control']) !!}
+                    {!! Form::text('salary', null, ['class' => 'form-control', 'placeholder' => 'Salario a pagar']) !!}
 
                     @error('salary')
                         <small class="text-danger">{{ $message }}</small>
