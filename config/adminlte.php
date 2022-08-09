@@ -45,7 +45,7 @@ return [
     |
     */
 
-    'logo' => '<b>Mix</b>FEE',
+    'logo' => '<b>Mix</b>Fee',
     'logo_img' => 'vendor/adminlte/dist/img/MixfeeLogo.png',
     'logo_img_class' => 'brand-image-xl img-circle elevation-3',
     'logo_img_xl' => null,

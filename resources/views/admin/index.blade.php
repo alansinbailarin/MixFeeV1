@@ -61,7 +61,46 @@
     
     </div>
 </section>    
-
+<div class="card text-center">
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-circle-fill" viewBox="0 0 16 16">
+                            <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>
+                          </svg> Salario Mas Alto
+                    </th>
+                    <th>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-sliders2" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M10.5 1a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4H1.5a.5.5 0 0 1 0-1H10V1.5a.5.5 0 0 1 .5-.5ZM12 3.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5Zm-6.5 2A.5.5 0 0 1 6 6v1.5h8.5a.5.5 0 0 1 0 1H6V10a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5ZM1 8a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2A.5.5 0 0 1 1 8Zm9.5 2a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V13H1.5a.5.5 0 0 1 0-1H10v-1.5a.5.5 0 0 1 .5-.5Zm1.5 2.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5Z"/>
+                          </svg> Salario Promedio
+                    </th>
+                    <th>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-circle-fill" viewBox="0 0 16 16">
+                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"/>
+                          </svg> Salario Mas Bajo
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($wage as $w)
+                <tr>
+                    <td>
+                        {{$w->higherSalary}}
+                    </td>
+                    <td>
+                        {{$w->lowestSalary }}
+                    </td>
+                    <td>
+                        {{$w->averageSalary }}
+                    </td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+      </div>
+</div>
 <div class="row">
     <div class="col-sm-6">
       <div class="card">
@@ -78,53 +117,127 @@
       </div>
     </div>
   </div>
-    <div class="card">
-        <div class="card-header font-weight-bold">Ultimos usuarios registrados</div>
-        <div class="card-body">
-            <table>
-                <thead>
-                    <tr>
-                        <th>
-                            Foto
-                        </th>
-                        <th>
-                            Nombre
-                        </th>
-                        <th>
-                            Empleo actual
-                        </th>
-                        <th>
-                            Correo electrónico
-                        </th>
-                        <th>
-                            Se registró
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($latestUser as $latest)
-                    <tr>
-                        <td >
-                            <img  alt="{{$latest->name}}" src="{{$latest->profile_photo_url}}" class="w-12 h-12 object-cover rounded-full">
-                        </td>
-                        <td>
-                            {{$latest->name}}
-                        </td>
-                        <td>
-                            {{$latest->current_job}}
-                        </td>
-                        <td>
-                            {{$latest->email}}
-                        </td>
-                        <td>
-                            {{$latest->created_at->formatLocalized("%A %d %B %Y")}}
-                        </td>
-                    </tr>
-                    @endforeach
-                </tbody>
-            </table>
+
+  <div class="row">
+    <div class="col-sm-6">
+        <div class="card" >
+            <div class="card-header font-weight-bold">Promedio del salario de trabajos por tag</div>
+            <div class="card-body ">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Nombre del tag
+                                </th>
+                                <th>
+                                    Promedio
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($tagsProm as $tagProm)
+                            <tr>
+                                <td>
+                                    {{$tagProm->Nombre_Tag}}
+                                </td>
+                                <td>
+                                    {{$tagProm->Promedio_Salario}}
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                  </div>
+            </div>
         </div>
     </div>
+    <div class="col-sm-6">
+        <div class="card" >
+            <div class="card-header font-weight-bold">Promedio del salario de trabajos por Categoría</div>
+            <div class="card-body ">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Nombre de Categoría
+                                </th>
+                                <th>
+                                    Promedio
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($categoriesProm as $categoryProm)
+                            <tr>
+                                <td>
+                                    {{$categoryProm->name}}
+                                </td>
+                                <td>
+                                    {{$categoryProm->Salario_Categoria}}
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                  </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+
+    <div class="card">
+        <div class="card-header font-weight-bold">Ultimos usuarios registrados</div>
+        <div class="card-body ">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
+                                Foto
+                            </th>
+                            <th>
+                                Nombre
+                            </th>
+                            <th>
+                                Empleo actual
+                            </th>
+                            <th>
+                                Correo electrónico
+                            </th>
+                            <th>
+                                Se registró
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($latestUser as $latest)
+                        <tr>
+                            <td >
+                                <img  alt="{{$latest->name}}" src="{{$latest->profile_photo_url}}" class="w-12 h-12 object-cover rounded-full img-circle" >
+                            </td>
+                            <td>
+                                {{$latest->name}}
+                            </td>
+                            <td>
+                                {{$latest->current_job}}
+                            </td>
+                            <td>
+                                {{$latest->email}}
+                            </td>
+                            <td>
+                                {{$latest->created_at->formatLocalized("%A %d %B %Y")}}
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+              </div>
+        </div>
+    </div>
+
   </div>
 
   

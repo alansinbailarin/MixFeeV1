@@ -22,9 +22,10 @@ class ConsultaController extends Controller
         $latestUser = User::latest('id')->take(5)->get();
         $wage =DB:: select("call spWages()");
         $tagsProm =DB:: select("call spAVGSalarioTags()");
+        $categoriesProm =DB:: select("call spSalarioCategorias()");
 
 
-        return view("admin.index",["data2"=>json_encode($jobCategories),"data"=>json_encode($jobTags)], compact('allCounter', 'userCounted', 'categoryCounted', 'tagCounted', 'wage', 'tagsProm', 'latestUser'));
+        return view("admin.index",["data2"=>json_encode($jobCategories),"data"=>json_encode($jobTags)], compact('allCounter', 'userCounted', 'categoryCounted', 'tagCounted', 'wage', 'tagsProm', 'latestUser','categoriesProm'));
         
     }
 }
