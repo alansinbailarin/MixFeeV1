@@ -22,4 +22,4 @@ Route::get('category/{category}', [JobController::class, 'category'])->name('job
 
 Route::get('tags/{tag}', [JobController::class, 'tag'])->name('jobs.tag');
 
-Route::get('graficos',[ConsultaController::class, 'index']);
+Route::get('admin/dashboard',[ConsultaController::class, 'index']);

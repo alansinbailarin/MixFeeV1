@@ -248,7 +248,7 @@ return [
         ],
         [
             'text'        => 'Dashboard',
-            'route'         => 'admin.index',
+            'url'         => 'admin/dashboard',
             'icon'        => 'fas fa-tachometer-alt fa-fw',
         ],
         ['header' => 'Administracion'],
