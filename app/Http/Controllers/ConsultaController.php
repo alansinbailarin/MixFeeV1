@@ -19,9 +19,12 @@ class ConsultaController extends Controller
         $categoryCounted = Category::all()->count();
         $tagCounted = Tag::all()->count();
         $allCounter = Job::all()->count();
+        $latestUser = User::latest('id')->take(5)->get();
         $wage =DB:: select("call spWages()");
+        $tagsProm =DB:: select("call spAVGSalarioTags()");
 
-        return view("admin.index",["data2"=>json_encode($jobCategories),"data"=>json_encode($jobTags)], compact('allCounter', 'userCounted', 'categoryCounted', 'tagCounted', 'wage'));
+
+        return view("admin.index",["data2"=>json_encode($jobCategories),"data"=>json_encode($jobTags)], compact('allCounter', 'userCounted', 'categoryCounted', 'tagCounted', 'wage', 'tagsProm', 'latestUser'));
         
     }
 }
