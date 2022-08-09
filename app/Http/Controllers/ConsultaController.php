@@ -25,6 +25,7 @@ class ConsultaController extends Controller
         $categoriesProm =DB:: select("call spSalarioCategorias()");
 
 
+        
         return view("admin.index",["data2"=>json_encode($jobCategories),"data"=>json_encode($jobTags)], compact('allCounter', 'userCounted', 'categoryCounted', 'tagCounted', 'wage', 'tagsProm', 'latestUser','categoriesProm'));
         
     }
