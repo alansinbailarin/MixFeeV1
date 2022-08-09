@@ -46,12 +46,11 @@
                         <div class="py-6 px-4 flex flex-wrap md:flex-nowrap bg-white border border-gray-200 shadow-md rounded-md">
                             
                             <div class="hidden md:w-16 md:mb-0 mb-6-mr-4 flex-shrink-0 md:flex flex-col">
-                                {{-- Ponerlo en el src de la imagen cuando tenga {{Storage::url($job->image->url)}} --}}
-                                <img src="img/google.png" alt="" class="w-14 h-14 rounded-full object-cover">
+                                <img src="@if($job->image) {{Storage::url($job->image->url)}} @else img/logomixfee.png @endif" alt="" class="w-14 h-14 rounded-full object-cover">
                             </div>
                             <div class="mr-8 flex flex-col items-start justify-center">
                                 <p class="text-gray-400 font-light text-left ">Publicado {{$job->created_at->diffForHumans()}} en {{ $job->location }}</p>
-                                <h2 class="text-xl font-bold text-gray-500 mb-1 text-left ">{{ $job->title }}</h2>
+                                <a href="{{route('jobs.show', $job)}}" class="text-xl font-bold text-gray-500 mb-1 text-left ">{{ $job->title }}</a>
                                 <p class="text-normal font-extralight text-gray-400">{{ $job->type }}</p>
                                 <p class="leading-relaxed text-gray-500 text-left hidden md:flex">{{ Str::limit($job->description, 150, '...') }}</p> 
                                 
@@ -62,9 +61,6 @@
                                     
                                 </div>
                                 <p class="mt-4 font-bold text-green-400">$ {{ $job->salary }}</p>
-                            </div>
-                            <div class="mt-4 md:mt-0 flex items-stretch">
-                                <a href="{{route('jobs.show', $job)}}" class="self-end text-white bg-blue-600 rounded-md px-4 py-2 hover:bg-blue-500 baseline ease-out duration-500 ">Aplicar</a>
                             </div>
                         </div>
                     </article>
