@@ -56,6 +56,7 @@
               <div class="mt-4 text-gray-500">
                 <a href="#" class="block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="user-menu-item-0">Mi perfil</a>
                 <a href="{{ route('profile.show') }}" class="block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="user-menu-item-1">Configuracion</a>
+                <a href="{{ route('admin.index') }}" class="block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="user-menu-item-1">Panel de administrador</a>
                 <form method="POST" action="{{ route('logout') }}" x-data>
                   @csrf
                     <a href="{{ route('logout') }}" class="block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="user-menu-item-2" @click.prevent="$root.submit();" >Cerrar sesión</a>

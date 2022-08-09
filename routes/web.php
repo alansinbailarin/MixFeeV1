@@ -20,3 +20,4 @@ Route::middleware([
 Route::get('category/{category}', [JobController::class, 'category'])->name('jobs.category');
 
 Route::get('tags/{tag}', [JobController::class, 'tag'])->name('jobs.tag');
+

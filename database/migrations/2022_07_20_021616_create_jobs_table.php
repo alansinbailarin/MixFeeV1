@@ -18,22 +18,21 @@ return new class extends Migration
 
             $table->string('title');
             $table->string('slug');
-            $table->longText('description');
-            $table->string('company');
-            $table->string('company_url');
-            $table->string('location');
-            $table->string('how_to_apply');
-            $table->string('company_email');
-            $table->string('company_phone');
+            $table->longText('description')->nullable();
+            $table->string('company')->nullable();
+            $table->string('company_url')->nullable();
+            $table->string('location')->nullable();
+            $table->string('how_to_apply')->nullable();
+            $table->string('company_email')->nullable();
+            $table->string('company_phone')->nullable();
             $table->enum('status', [1, 2])->default(1);
-            $table->decimal('salary')->nullable();
+            $table->string('salary')->nullable();
             $table->string('benefices')->nullable();
             $table->string('requisites')->nullable();
             $table->string('responsabilities')->nullable();
             $table->string('requirements')->nullable();
-            $table->text('about');
-            $table->time('post_time');
-            $table->string('type');
+            $table->text('about')->nullable();
+            $table->string('type')->nullable();
 
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('category_id');

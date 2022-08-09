@@ -32,7 +32,6 @@ class JobFactory extends Factory
             'company_phone' => $this->faker->phoneNumber(),
             'status' => $this->faker->randomElement([1, 2]),
             'salary' => $this->faker->randomNumber(2, 6),
-            'post_time' => $this->faker->time(),
             'type' => $this->faker->text(10),
             'benefices' => $this->faker->text(200),
             'requisites' => $this->faker->text(200),

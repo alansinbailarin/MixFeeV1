@@ -17,7 +17,7 @@ class JobSeeder extends Seeder
      */
     public function run()
     {
-        $jobs = Job::factory(100)->create();
+        $jobs = Job::factory(300)->create();
 
         foreach ($jobs as $job) {
             Image::factory(1)->create([

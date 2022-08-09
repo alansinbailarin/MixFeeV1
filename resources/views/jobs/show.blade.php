@@ -78,7 +78,7 @@
                             <p class="text-base text-gray-500 justify mt-1">{{$job->category->name}}</p>
                         <div class="mt-8">
                             <div class="mt-8">
-                            <a href="{{$job->company_url}}" class="text-white bg-blue-600 rounded-md px-4 py-2 hover:bg-blue-500 baseline ease-out duration-500 ">Aplicar a este trabajo</a>
+                            <a href="{{$job->company_url}}" target="_blank" class="text-white bg-blue-600 rounded-md px-4 py-2 hover:bg-blue-500 baseline ease-out duration-500 ">Aplicar a este trabajo</a>
                         </div>
                     </article>
                 </section>
@@ -147,11 +147,11 @@
                         </div>
                         <div class="mt-5">
                             <p class="text-gray-500 font-semibold">Telefono de la empresa</p>
-                            <p class="text-gray-400">{{$job->company_phone}}</p>
+                            <a href="tel:{{$job->company_phone}}" class="text-blue-400">{{$job->company_phone}}</a>
                         </div>
                         <div class="mt-5">
                             <p class="text-gray-500 font-semibold">Correo de la empresa</p>
-                            <p class="text-gray-400">{{$job->company_email}}</p>
+                            <a href="mailto:{{$job->company_email}}" class="text-blue-400">{{$job->company_email}}</a>
                         </div>
                         <div class="mt-5">
                             <p class="text-gray-500 font-semibold">Sitio web de la empresa</p>
