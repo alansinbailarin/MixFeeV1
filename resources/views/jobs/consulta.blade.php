@@ -17,7 +17,7 @@
         <div class="row">
             <div class="col">
                 <div id="container" style="width:30%"></div>
-                <div id="container2"style="width:30%"></div>
+                <div id="container2"style="width:70%"></div>
                 <div id="container3"style="width:30%">
                     
                 </div>
