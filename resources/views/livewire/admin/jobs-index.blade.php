@@ -18,6 +18,8 @@
                     <tr>
                         <td>{{$job->id}}</td>
                         <td>{{$job->title}}</td>
+                        <td width="10px"><a class="btn btn-info btn-sm" href="{{route('admin.jobs.show', $job)}}">Ver</a></td>
+
                         <td width="10px">
                             <a href="{{route('admin.jobs.edit', $job)}}" class="btn btn-primary btn-sm">Editar</a>
                         </td>

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('ocupation')->nullable();
             $table->string('gender')->nullable();
-            $table->text('experience')->nullable();
+            $table->longText('experience')->nullable();
             $table->string('education')->nullable();
             $table->string('courses')->nullable();
             $table->string('knownments')->nullable();

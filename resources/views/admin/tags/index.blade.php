@@ -31,6 +31,7 @@
                         <tr>
                             <td>{{$tag->id}}</td>
                             <td>{{$tag->name}}</td>
+                            <td width="10px"><a class="btn btn-info btn-sm" href="{{route('admin.tags.show', $tag)}}">Ver</a></td>
                             <td width="10px"><a class="btn btn-primary btn-sm" href="{{route('admin.tags.edit', $tag)}}">Editar</a></td>
                             <td width="10px">
                                 <form action="{{route('admin.tags.destroy', $tag)}}" method="POST">

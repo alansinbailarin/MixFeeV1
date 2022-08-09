@@ -44,7 +44,7 @@ class StoreJobRequest extends FormRequest
                 'requisites' => 'required',
                 'responsabilities' => 'required',
                 'requirements' => 'required',
-                'company_url' => 'required|url',
+                'company_url' => 'required',
                 'company_email' => 'required',
                 'company_phone' => 'required',
                 'location' => 'required',

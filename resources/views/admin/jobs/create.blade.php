@@ -52,8 +52,8 @@
                     @enderror
                 </div>
                 <div class="form-group">
-                    {!! Form::label('company', 'Nombre de la compañia:') !!}
-                    {!! Form::text('company', null, ['class' => 'form-control', 'placeholder' => 'Nombre de la compañia']) !!}
+                    {!! Form::label('company', 'Compañia:') !!}
+                    {!! Form::text('company', null, ['class' => 'form-control', 'placeholder' => 'Ej. Cocina de Anita']) !!}
 
                     @error('company')
                         <small class="text-danger">{{ $message }}</small>
@@ -84,7 +84,7 @@
                     @enderror
                 </div>
                 <div class="form-group">
-                    {!! Form::label('requisites', 'Requisitos para aplicar:') !!}
+                    {!! Form::label('requisites', 'Requisitos:') !!}
                     {!! Form::textarea('requisites', null, ['class' => 'form-control', 'placeholder' => 'Requisitos para el trabajador']) !!}
 
                     @error('requisites')
@@ -92,7 +92,7 @@
                     @enderror
                 </div>
                 <div class="form-group">
-                    {!! Form::label('responsabilities', 'Responsabilidades del trabajador:') !!}
+                    {!! Form::label('responsabilities', 'Responsabilidades:') !!}
                     {!! Form::textarea('responsabilities', null, ['class' => 'form-control', 'placeholder' => 'Responsabilidades del trabajador']) !!}
 
                     @error('responsabilities')
@@ -100,8 +100,8 @@
                     @enderror
                 </div>
                 <div class="form-group">
-                    {!! Form::label('requirements', 'Requerimientos para aplicar:') !!}
-                    {!! Form::textarea('requirements', null, ['class' => 'form-control', 'placeholder' => 'Requerimientos para aplicar']) !!}
+                    {!! Form::label('requirements', 'Cosas a hacer:') !!}
+                    {!! Form::textarea('requirements', null, ['class' => 'form-control', 'placeholder' => 'Requisitos para Aplicar']) !!}
 
                     @error('requirements')
                         <small class="text-danger">{{ $message }}</small>
@@ -109,7 +109,7 @@
                 </div>
                 <div class="form-group">
                     {!! Form::label('company_url', 'Pagina web:') !!}
-                    {!! Form::text('company_url', null, ['class' => 'form-control', 'placeholder' => 'Introduzca la url de la pagina web']) !!}
+                    {!! Form::text('company_url', null, ['class' => 'form-control', 'placeholder' => 'https://www.ejemplo.com/ejemplo']) !!}
 
                     @error('company_url')
                         <small class="text-danger">{{ $message }}</small>
@@ -117,15 +117,15 @@
                 </div>
                 <div class="form-group">
                     {!! Form::label('company_email', 'Correo electrónico:') !!}
-                    {!! Form::text('company_email', null, ['class' => 'form-control', 'placeholder' => 'Introduzca el correo electrónico']) !!}
+                    {!! Form::text('company_email', null, ['class' => 'form-control', 'placeholder' => 'ejemplo@ejemplo.com']) !!}
 
                     @error('company_email')
                         <small class="text-danger">{{ $message }}</small>
                     @enderror
                 </div>
                 <div class="form-group">
-                    {!! Form::label('company_phone', 'Numero de telefono:') !!}
-                    {!! Form::text('company_phone', null, ['class' => 'form-control', 'placeholder' => 'Introduzca el numero de telefono']) !!}
+                    {!! Form::label('company_phone', 'Telefono de contacto:') !!}
+                    {!! Form::text('company_phone', null, ['class' => 'form-control', 'placeholder' => '52 6633751694']) !!}
 
                     @error('company_phone')
                         <small class="text-danger">{{ $message }}</small>
@@ -133,7 +133,7 @@
                 </div>
                 <div class="form-group">
                     {!! Form::label('location', 'Ubicacion:') !!}
-                    {!! Form::text('location', null, ['class' => 'form-control', 'placeholder' => 'Introduzca la ubicacion']) !!}
+                    {!! Form::text('location', null, ['class' => 'form-control', 'placeholder' => 'Ej. Cabos San Lucas, Baja California']) !!}
 
                     @error('location')
                         <small class="text-danger">{{ $message }}</small>

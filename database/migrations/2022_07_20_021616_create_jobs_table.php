@@ -27,11 +27,11 @@ return new class extends Migration
             $table->string('company_phone')->nullable();
             $table->enum('status', [1, 2])->default(1);
             $table->string('salary')->nullable();
-            $table->string('benefices')->nullable();
-            $table->string('requisites')->nullable();
-            $table->string('responsabilities')->nullable();
-            $table->string('requirements')->nullable();
-            $table->text('about')->nullable();
+            $table->longText('benefices')->nullable();
+            $table->longText('requisites')->nullable();
+            $table->longText('responsabilities')->nullable();
+            $table->longText('requirements')->nullable();
+            $table->longText('about')->nullable();
             $table->string('type')->nullable();
 
             $table->unsignedBigInteger('user_id');

@@ -28,7 +28,7 @@
                             </div>
                             <div class="mt-5">
                                 <span class="font-semibold text-gray-500">Categoria</span>
-                                <p class="text-base text-gray-500 justify mt-1">{{$job->category->name}}</p>
+                                <p class="text-base text-gray-500  mt-1">{{$job->category->name}}</p>
                             </div>
                             <div class="mt-5">
                                 <p class="text-gray-500 font-semibold">Especialidades</p>
@@ -55,27 +55,27 @@
                         </div>
                         <div class="mt-5">
                             <span class="font-semibold text-gray-600 text-lg">Sobre nuestra empresa</span>
-                            <p class="text-base text-gray-500 justify mt-1">{{$job->about}}</p>
+                            <p class="text-base text-gray-500  mt-1">{{$job->about}}</p>
                         </div>
                         <div class="mt-5">
                             <span class="font-semibold text-gray-600 text-lg">¿Qué haras con nosotros?</span>
-                            <p class="text-base text-gray-500 justify mt-1">{{$job->description}}</p>
+                            <p class="text-base text-gray-500  mt-1">{{$job->description}}</p>
                         </div>
                         <div class="mt-5">
                             <span class="font-semibold text-gray-600 text-lg">Beneficios que obtendras</span>
-                            <p class="text-base text-gray-500 justify mt-1">{{$job->benefices}}</p>
+                            <p class="text-base text-gray-500  mt-1">{{$job->benefices}}</p>
                         </div>
                         <div class="mt-5">
                             <span class="font-semibold text-gray-600 text-lg">Responsabilidades</span>
-                            <p class="text-base text-gray-500 justify mt-1">{{$job->responsabilities}}</p>
+                            <p class="text-base text-gray-500  mt-1">{{$job->responsabilities}}</p>
                         </div>
                         <div class="mt-5">
                             <span class="font-semibold text-gray-600 text-lg">Requisitos</span>
-                            <p class="text-base text-gray-500 justify mt-1">{{$job->requirements}}</p>
+                            <p class="text-base text-gray-500  mt-1">{{$job->requirements}}</p>
                         </div>
                         <div class="mt-5">
                             <span class="font-semibold text-gray-600 text-lg">Categoria</span>
-                            <p class="text-base text-gray-500 justify mt-1">{{$job->category->name}}</p>
+                            <p class="text-base text-gray-500  mt-1">{{$job->category->name}}</p>
                         <div class="mt-8">
                             <div class="mt-8">
                             <a href="{{$job->company_url}}" target="_blank" class="text-white bg-blue-600 rounded-md px-4 py-2 hover:bg-blue-500 baseline ease-out duration-500 ">Aplicar a este trabajo</a>
