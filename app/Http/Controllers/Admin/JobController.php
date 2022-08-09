@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\Job;
 use App\Models\Category;
 use App\Models\Tag;
-use App\Http\Requests\StoreJobRequest;
+use Illuminate\Support\Facades\Storage;
+use App\Http\Requests\JobRequest;
 
 class JobController extends Controller
 {
@@ -42,15 +43,18 @@ class JobController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreJobRequest $request)
+    public function store(JobRequest $request)
     {
+
+
         $job = Job::create($request->all());
 
         if ($request->tags) {
             $job->tags()->attach($request->tags);
         }
 
-        return redirect()->route('admin.jobs.edit', $job)->with('success', 'Job created successfully');
+        return redirect()->route('admin.jobs.edit', $job)->with('success', 'Trabajo creado con éxito');
+    
     }
 
     /**
@@ -73,7 +77,12 @@ class JobController extends Controller
      */
     public function edit(Job $job)
     {
-        return view('admin.jobs.edit', compact('job'));
+
+        $tags = Tag::all();
+
+        $categories = Category::pluck('name', 'id');
+
+        return view('admin.jobs.edit', compact('job', 'categories', 'tags'));
 
     }
 
@@ -84,9 +93,15 @@ class JobController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Job $job)
+    public function update(JobRequest $request, Job $job)
     {
-        //
+        $job->update($request->all());
+        
+        if ($request->tags) {
+            $job->tags()->attach($request->tags);
+        }
+
+        return redirect()->route('admin.jobs.edit', $job)->with('success', 'Trabajo actualizado con exito');
     }
 
     /**

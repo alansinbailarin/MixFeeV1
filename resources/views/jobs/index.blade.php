@@ -45,9 +45,9 @@
                     <article class="mt-5 justify-center">
                         <div class="py-6 px-4 flex flex-wrap md:flex-nowrap bg-white border border-gray-200 shadow-md rounded-md">
                             
-                            <div class="hidden md:w-16 md:mb-0 mb-6-mr-4 flex-shrink-0 md:flex flex-col">
+                            {{-- <div class="hidden md:w-16 md:mb-0 mb-6-mr-4 flex-shrink-0 md:flex flex-col">
                                 <img src="@if($job->image) {{Storage::url($job->image->url)}} @else img/logomixfee.png @endif" alt="" class="w-14 h-14 rounded-full object-cover">
-                            </div>
+                            </div> --}}
                             <div class="mr-8 flex flex-col items-start justify-center">
                                 <p class="text-gray-400 font-light text-left ">Publicado {{$job->created_at->diffForHumans()}} en {{ $job->location }}</p>
                                 <a href="{{route('jobs.show', $job)}}" class="text-xl font-bold text-gray-500 mb-1 text-left ">{{ $job->title }}</a>
