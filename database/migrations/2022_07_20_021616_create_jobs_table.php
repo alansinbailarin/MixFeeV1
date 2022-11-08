@@ -26,7 +26,7 @@ return new class extends Migration
             $table->string('company_email')->nullable();
             $table->string('company_phone')->nullable();
             $table->enum('status', [1, 2])->default(1);
-            $table->string('salary')->nullable();
+            $table->decimal('salary')->nullable();
             $table->longText('benefices')->nullable();
             $table->longText('requisites')->nullable();
             $table->longText('responsabilities')->nullable();

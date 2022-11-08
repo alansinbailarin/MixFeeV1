@@ -90,10 +90,10 @@
                         {{$w->higherSalary}}
                     </td>
                     <td>
-                        {{$w->lowestSalary }}
+                        {{$w->averageSalary }}
                     </td>
                     <td>
-                        {{$w->averageSalary }}
+                        {{$w->lowestSalary }}
                     </td>
                 </tr>
                 @endforeach
@@ -117,43 +117,6 @@
       </div>
     </div>
   </div>
-
-  
-  <div class="row">
-    <div class="col-sm-6">
-        <div class="card" >
-            <div class="card-header font-weight-bold">Promedio del salario de trabajos por tag</div>
-            <div class="card-body ">
-                <div class="table-responsive">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>
-                                    Nombre del tag
-                                </th>
-                                <th>
-                                    Promedio
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($tagsProm as $tagProm)
-                            <tr>
-                                <td>
-                                    {{$tagProm->Nombre_Tag}}
-                                </td>
-                                <td>
-                                    {{$tagProm->Promedio_Salario}}
-                                </td>
-                            </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                  </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-6">
         <div class="card" >
             <div class="card-header font-weight-bold">Promedio del salario de trabajos por Categoría</div>
             <div class="card-body ">
@@ -294,7 +257,7 @@ Highcharts.chart('container2', {
     },
     title: {
         align: 'left',
-        text: 'Cantidad de Trabajos por Categoría'
+        text: 'Cantidad de Trabajos por categoria'
     },
     accessibility: {
         announceNewData: {
@@ -329,9 +292,8 @@ Highcharts.chart('container2', {
 
     series: [
         {
-            name: "Browsers",
             colorByPoint: true,
-            data: <?= $data ?>
+            data: <?= $data2 ?>
         }
     ]
 });

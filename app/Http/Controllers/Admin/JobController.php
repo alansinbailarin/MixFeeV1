@@ -112,6 +112,9 @@ class JobController extends Controller
      */
     public function destroy(Job $job)
     {
-        //
+        
+        $job->delete();
+
+        return redirect()->route('admin.jobs.index')->with('deleted', 'Trabajo eliminada');
     }
 }

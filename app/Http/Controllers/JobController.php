@@ -97,4 +97,5 @@ class JobController extends Controller
         $LTags =DB:: select("call spLatestTags()");
         return response()->json($LTags);
     }
+    
 }

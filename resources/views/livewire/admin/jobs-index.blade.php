@@ -1,4 +1,10 @@
 <div class="card">
+    @if (session('deleted'))
+    <div class="alert alert-danger" role="alert">
+        <strong>{{ session('deleted') }}</strong>
+    </div>
+    
+    @endif
     <div class="card-header">
         <input wire:model="search" placeholder="Filtro de tus trabajos publicados" class="form-control">
     </div>

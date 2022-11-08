@@ -1,34 +1,38 @@
 <x-app-layout>
-
     <!-- Esta clase contiene el container -->
-    <div class="max-w-7xl mx-auto mt-20 px-2 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto mt-4 px-2 sm:px-6 lg:px-8">
         <section class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 rounded-lg" id="hero">
-            <div class="container flex flex-col-reverse md:flex-row items-center px-6 mx-auto  space-y-0 md:space-y-0">
-                <div class="flex pt-10 flex-col mb-32 space-y-5 md:w-1/2">
-                        <h1 class="max-w-md text-4xl font-bold text-center md:text-5xl md:text-left tracking-wide">
-                            Encuentra tu <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-pink-500 font-bold">Trabajo ideal</span> fácil, rápido y seguro.
+            <div class="container flex flex-col-reverse md:flex-row items-center px-6 mx-auto space-y-0 md:space-y-0">
+                <div class="flex pt-10 flex-col mb-16 space-y-5 md:w-1/2">
+                    <div class="flex justify-center items-center md:justify-start">
+                        <div class="bg-gray-100 rounded-md py-2 px-6 text-sm font-medium text-violet-700 inline-flex">Impulsamos tu carrera <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" class="bi bi-lightning-charge ml-2 mt-1" viewBox="0 0 14 16">
+                            <path d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09zM4.157 8.5H7a.5.5 0 0 1 .478.647L6.11 13.59l5.732-6.09H9a.5.5 0 0 1-.478-.647L9.89 2.41 4.157 8.5z"/>
+                          </svg></div>
+                    </div>
+                        <h1 class="max-w-lg text-4xl font-bold text-center md:text-5xl text-gray-900 md:text-left tracking-wide">
+                            El lugar en donde puedes encontrar el trabajo de tus <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-pink-500 font-bold">sueños.</span>
                         </h1>
-                        <p class="max-w-sm text-center text-gray-500 md:text-left">
-                            Sabemos que encontrar un trabajo es dificil, por eso te ofrecemos una plataforma donde podrás encontrar el trabajo que mas te guste en unos pocos clicks.
+                        <p class="max-w-lg text-center text-gray-500 md:text-left">
+                            Sabemos que encontrar empleo puede ser dificil, por eso te ofrecemos la alternativa de hacerlo, de la mano de MixFee.
                         </p>
                         <div class="flex justify-center md:justify-start">
-                            <a href="#buscarEmpleo" class="p-3 px-5 text-white bg-blue-600 rounded-md 
-                            hover:bg-blue-500 baseline ease-out duration-500">Publicar empleo</a>
+                            <a href="#buscarEmpleo" class="p-3 px-8 text-white bg-gray-900 rounded-md baseline ease-out duration-500 font-medium hover:bg-gray-800">Estoy buscando talento</a>
                         </div>
                 </div>
-                <div class="md:w-1/2">
-                    <div class="bg-no-repeat" style="background-image: url({{asset('img/blob.svg')}});" >
-                        
-                        <img class="rounded-full" src="{{asset('img/home/hero.webp')}}" alt="">
-                    </div>
+                <div class="md:w-1/2 hidden md:flex">
+                    <img class="" src="{{asset('img/home/img_fondo.png')}}" alt="">
                 </div>
             </div>
         </section>
-
+        <section id="masBuscado">
+            <div class="px-5 mx-auto rounded-md max-w-6xl">
+                <h1 class="text-3xl font-bold text-center md:text-left"></h1>
+            </div>
+        </section>
         <section id="buscarEmpleo">
-            <div class="max-w-6xl px-5 mx-auto md:mt-20 text-center">
-                <h2 class="text-3xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-pink-500">
-                    El empleo de tus sueños
+            <div class="max-w-6xl px-5 mx-auto md:mt-4 text-center">
+                <h2 class="text-3xl font-bold text-center md:text-left">
+                    Ofertas de empleo
                 </h2>
                 <div class="relative container mx-auto">
                       
@@ -43,7 +47,7 @@
                     @foreach ($jobs as $job)
                     
                     <article class="mt-5 justify-center">
-                        <div class="py-6 px-4 flex flex-wrap md:flex-nowrap bg-white border border-gray-200 shadow-md rounded-md">
+                        <div class="py-6 px-4 flex flex-wrap md:flex-nowrap bg-white border border-gray-200 rounded-md">
                             
                             {{-- <div class="hidden md:w-16 md:mb-0 mb-6-mr-4 flex-shrink-0 md:flex flex-col">
                                 <img src="@if($job->image) {{Storage::url($job->image->url)}} @else img/logomixfee.png @endif" alt="" class="w-14 h-14 rounded-full object-cover">
@@ -54,9 +58,9 @@
                                 <p class="text-normal font-extralight text-gray-400">{{ $job->type }}</p>
                                 <p class="leading-relaxed text-gray-500 text-left hidden md:flex">{{ Str::limit($job->description, 150, '...') }}</p> 
                                 
-                                <div >
+                                <div class="text-left md:text-left">
                                     @foreach ($job->tags as $tag)
-                                        <a href="{{route('jobs.tag', $tag)}}" class="mt-4 text-sm font-bold bg-blue-50 py-1 px-4 rounded-full text-blue-300 inline-block">#{{ $tag->name }}</a>
+                                        <a href="{{route('jobs.tag', $tag)}}" class="mt-4 text-sm font-medium bg-violet-100 py-1 px-4 rounded-md text-violet-500 inline-block">{{ $tag->name }}</a>
                                     @endforeach
                                     
                                 </div>

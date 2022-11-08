@@ -15,6 +15,6 @@ class Search extends Component
     }
 
     public function getResultsProperty(){
-        return Job::where('title', 'LIKE', '%' . $this->search . '%')->where('status', 2)->take(5)->get();
+        return Job::where('title', 'LIKE', '%' . $this->search . '%')->where('status', 2)->take(2)->get();
     }
 }

@@ -123,7 +123,7 @@
                 </div>
                 <div class="form-group">
                     {!! Form::label('company_email', 'Correo electrónico:') !!}
-                    {!! Form::text('company_email', null, ['class' => 'form-control', 'placeholder' => 'ejemplo@ejemplo.com']) !!}
+                    {!! Form::email('company_email', null, ['class' => 'form-control', 'placeholder' => 'ejemplo@ejemplo.com']) !!}
 
                     @error('company_email')
                         <small class="text-danger">{{ $message }}</small>
@@ -131,7 +131,7 @@
                 </div>
                 <div class="form-group">
                     {!! Form::label('company_phone', 'Telefono de contacto:') !!}
-                    {!! Form::text('company_phone', null, ['class' => 'form-control', 'placeholder' => '52 6633751694']) !!}
+                    {!! Form::number('company_phone', null, ['class' => 'form-control', 'placeholder' => '52 6633751694']) !!}
 
                     @error('company_phone')
                         <small class="text-danger">{{ $message }}</small>
@@ -155,7 +155,7 @@
                 </div>
                 <div class="form-group">
                     {!! Form::label('salary', 'Salario:') !!}
-                    {!! Form::text('salary', null, ['class' => 'form-control', 'placeholder' => 'Salario a pagar']) !!}
+                    {!! Form::number('salary', null, ['class' => 'form-control', 'placeholder' => 'Salario promedio']) !!}
 
                     @error('salary')
                         <small class="text-danger">{{ $message }}</small>

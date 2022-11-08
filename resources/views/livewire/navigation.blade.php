@@ -1,4 +1,4 @@
-<nav class="bg-white sticky top-0 z-50 border border-gray-100 shadow-sm" x-data="{ open: false }">
+<nav class="bg-white sticky top-0 z-50 border border-gray-200" x-data="{ open: false }">
     <div class="max-w-6xl mx-auto px-2 sm:px-6 lg:px-8">
       <div class="relative flex items-center justify-between h-16">
         <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -12,20 +12,19 @@
           </button>
         </div>
         <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-          <div class="flex-shrink-0 flex items-center">
+          <div class="flex-shrink-0 flex items-center -mt-2">
             <a href="/">
-                <h1 class="text-2xl text-transparent bg-clip-text font-bold bg-gradient-to-r from-blue-600 to-pink-500">Mix<span class="font-light text-gray-600">Fee</span></h1>
+                <h1 class="text-4xl text-transparent bg-clip-text font-bold bg-gradient-to-r from-blue-600 to-pink-500">Mix<span class="font-light text-gray-600">Fee</span></h1>
             </a>
         </div>
-        <div class="hidden sm:block sm:ml-6 mt-2">
+        <div class="hidden sm:block sm:ml-6">
             <div class="flex space-x-4 ">
-              <a href="/" class=" text-blue-500 bg-white hover:bg-gray-100 px-6  py-2 rounded-md text-sm font-medium ease-out duration-500" aria-current="page">Inicio</a>
-              
+              <a href="/" class=" text-violet-600 bg-white hover:bg-gray-100 px-6 py-2 rounded-md text-base font-medium ease-out duration-500" aria-current="page">Inicio</a>
               <div class="relative" x-data="{ open: false }">
                 <div>
-                  <button class="bg-white font-medium flex text-sm text-blue-500 hover:bg-gray-100 px-6 py-2 rounded-md ease-out duration-500" x-on:click=" open = true ">Categorias <svg class="ml-2 mt-1 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+                  <button class="bg-white font-medium flex text-base text-violet-600 hover:bg-gray-100 px-7 py-2 rounded-md ease-out duration-500" x-on:click=" open = true ">Categorias <svg class="ml-2 mt-1.5 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
                 </div>
-                <div x-show="open" x-on:click.away=" open = false " class="bg-white absolute ml-1 mt-1 w-40 border border-gray-100 shadow-md rounded-md">
+                <div x-show="open" x-on:click.away=" open = false " class="bg-white absolute mt-1 w-40 border border-gray-200 rounded-md">
                   @foreach ($categories as $category)
                   <a class="block px-4 py-2 w-full text-sm hover:bg-gray-100 text-gray-600 ease-out duration-500" href="{{route('jobs.category', $category)}}">{{ $category->name }}</a>
                   @endforeach
@@ -66,19 +65,18 @@
           </div>
         </div>
         @else
-          <a href="{{ route('login') }}" class="hidden md:block p-2 px-5 text-blue-600 font-medium text-sm  ease-out duration-500">Inicia sesión</a>
-          <a href="{{ route('register') }}" class="hidden md:block p-2 px-5 rounded-md text-white text-sm bg-blue-600 baseline hover:bg-blue-500 baseline ease-out duration-500">Registrate</a>
-                
+          <!-- <a href="{{ route('login') }}" class="hidden md:block mr-2 py-2 px-8 text-violet-600 bg-gray-100 font-medium text-base ease-out duration-500 rounded-md">Soy empresa</a> -->
+          <a href="{{ route('register') }}" class="hidden md:block py-2 px-8 rounded-md text-white font-medium text-base bg-violet-600 baseline hover:bg-violet-500 baseline ease-out duration-500">¡Unete!</a>    
         @endauth
       </div>
     </div>
       <div class="sm:hidden" x-show="open" x-on:click.away="open = false">
       <div class="px-2 pt-2 pb-3 space-y-1">
-        <a href="/" class="hover:bg-gray-100  text-gray-600 block px-3 py-2 rounded-md text-base font-medium" aria-current="page">Inicio</a>
+        <a href="/" class="hover:bg-gray-100 text-violet-600 block px-3 md:text-violet-600 py-2 rounded-md text-base font-medium" aria-current="page">Inicio</a>
         <hr>
-        <span href="/" class="hover:bg-gray-100  text-gray-600 block px-3 py-2 rounded-md text-base font-medium" aria-current="page">Categorias</span>
+        <span href="/" class="hover:bg-gray-100  text-violet-600 block px-3 py-2 md:text-violet-600 rounded-md text-base font-medium" aria-current="page">Categorias</span>
         @foreach ($categories as $category)
-          <a href="{{route('jobs.category', $category)}}" class="hover:bg-gray-100 text-gray-500 block px-3 py-2 rounded-md text-base font-light" aria-current="page">{{ $category->name }}</a>
+          <a href="{{route('jobs.category', $category)}}" class="hover:bg-gray-100 text-gray-500 font-normal block px-3 py-2 rounded-md text-base" aria-current="page">{{ $category->name }}</a>
         @endforeach
         @auth
         <div class="pt-4 pb-1 border-t border-gray-200">
@@ -94,6 +92,8 @@
           <div class="mt-3 space-y-1">
               <a class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:bg-gray-100 transition rounded-md" href="#" data-turbo="false">Perfil</a>
               <a class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:bg-gray-100 transition rounded-md" href="{{ route('profile.show')}}" data-turbo="false">Configuracion</a>
+              <a href="{{ url('admin/dashboard') }}" class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:bg-gray-100 transition rounded-md" role="menuitem" tabindex="-1" id="user-menu-item-1">Panel de administrador</a>
+
               <hr>
               <form method="POST" action="{{ route('logout') }}" x-data="">
                 @csrf
