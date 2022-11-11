@@ -66,15 +66,15 @@
         </div>
         @else
           <!-- <a href="{{ route('login') }}" class="hidden md:block mr-2 py-2 px-8 text-violet-600 bg-gray-100 font-medium text-base ease-out duration-500 rounded-md">Soy empresa</a> -->
-          <a href="{{ route('register') }}" class="hidden md:block py-2 px-8 rounded-md text-white font-medium text-base bg-violet-600 baseline hover:bg-violet-500 baseline ease-out duration-500">¡Unete!</a>    
+          <a href="{{ route('register') }}" class="hidden md:block py-2 px-8 rounded-md text-white font-medium text-base bg-violet-700 baseline hover:bg-violet-500 baseline ease-out duration-500">¡Unete!</a>    
         @endauth
       </div>
     </div>
       <div class="sm:hidden" x-show="open" x-on:click.away="open = false">
       <div class="px-2 pt-2 pb-3 space-y-1">
-        <a href="/" class="hover:bg-gray-100 text-violet-600 block px-3 md:text-violet-600 py-2 rounded-md text-base font-medium" aria-current="page">Inicio</a>
+        <a href="/" class="hover:bg-gray-100 text-violet-700 block px-3 md:text-violet-700 py-2 rounded-md text-base font-medium" aria-current="page">Inicio</a>
         <hr>
-        <span href="/" class="hover:bg-gray-100  text-violet-600 block px-3 py-2 md:text-violet-600 rounded-md text-base font-medium" aria-current="page">Categorias</span>
+        <span href="/" class="hover:bg-gray-100  text-violet-700 block px-3 py-2 md:text-violet-700 rounded-md text-base font-medium" aria-current="page">Categorias</span>
         @foreach ($categories as $category)
           <a href="{{route('jobs.category', $category)}}" class="hover:bg-gray-100 text-gray-500 font-normal block px-3 py-2 rounded-md text-base" aria-current="page">{{ $category->name }}</a>
         @endforeach

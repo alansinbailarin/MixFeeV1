@@ -21,6 +21,8 @@ class CategoryFactory extends Factory
 
         return [
             'name' => $name,
+            'description' => $this->faker->sentence(10),
+            'clicks' => $this->faker->randomDigit(),
             'slug' => Str::slug($name),
         ];
     }

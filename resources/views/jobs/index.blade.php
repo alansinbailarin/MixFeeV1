@@ -24,20 +24,53 @@
                 </div>
             </div>
         </section>
+        <section id="masBuscado" class="mb-4">
+            <div class="px-5 mx-auto rounded-md max-w-6xl">
+                <h1 class="text-3xl mb-4 font-bold text-center md:text-left">Lo más buscado.</h1>
+                <div class="bg-gray-900 p-6 rounded-lg grid md:grid-cols-3 gap-3">
+                    <div class="text-left card bg-gray-800 rounded-md p-4 text-gray-400 font-semibold text-base">
+                        <div class="flex justify-between">
+                            <h1>Full Stack Developer</h1>
+                        </div>
+                        <p class="font-light mt-2 text-left">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum placeat, accusantium aspernatur et inventore animi similique corrupti nemo quidem a enim dolorem rem corporis quas veritatis exercitationem optio repudiandae consequatur!</p>
+                        <div class="mt-4">
+                            <a href="#" class="bg-gray-700 px-6 hover:bg-gray-600 transition py-1 rounded-md">Ver mas</a>
+                        </div>
+                    </div>
+                    <div class="text-left card bg-gray-800 rounded-md p-4 text-gray-400 font-semibold text-base">
+                        <div class="flex justify-between">
+                            <h1>Full Stack Developer</h1>
+                        </div>
+                        <p class="font-light mt-2 text-left">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum placeat, accusantium aspernatur et inventore animi similique corrupti nemo quidem a enim dolorem rem corporis quas veritatis exercitationem optio repudiandae consequatur!</p>
+                        <div class="mt-4">
+                            <a href="#" class="bg-gray-700 px-6 hover:bg-gray-600 transition py-1 rounded-md">Ver mas</a>
+                        </div>
+                    </div>
+                    <div class="text-left card bg-gray-800 rounded-md p-4 text-gray-400 font-semibold text-base">
+                        <div class="flex justify-between">
+                            <h1>Full Stack Developer</h1>
+                        </div>
+                        <p class="font-light mt-2 text-left">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum placeat, accusantium aspernatur et inventore animi similique corrupti nemo quidem a enim dolorem rem corporis quas veritatis exercitationem optio repudiandae consequatur!</p>
+                        <div class="mt-4">
+                            <a href="#" class="bg-gray-700 px-6 hover:bg-gray-600 transition py-1 rounded-md">Ver mas</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <section id="masBuscado">
             <div class="px-5 mx-auto rounded-md max-w-6xl">
-                <h1 class="text-3xl font-bold text-center md:text-left"></h1>
+                <h1 class="text-lg font-bold text-center md:text-left">Lo mas buscado</h1>
+                <div class="cards">
+
+                </div>
             </div>
         </section>
         <section id="buscarEmpleo">
             <div class="max-w-6xl px-5 mx-auto md:mt-4 text-center">
-                <h2 class="text-3xl font-bold text-center md:text-left">
-                    Ofertas de empleo
-                </h2>
                 <div class="relative container mx-auto">
-                      
                     <div class="mt-10 ">
-                        <h2 class="text-center md:text-left font-bold  text-gray-600">Todos los empleos ({{$counting}})</h2>
+                        <h2 class="text-center text-lg md:text-left font-bold">Lo mas nuevo ({{$counting}})</h2>
                     </div>
 
                     <div class="md:hidden mt-5 mb-5">
