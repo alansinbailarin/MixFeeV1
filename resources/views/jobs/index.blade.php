@@ -28,41 +28,17 @@
             <div class="px-5 mx-auto rounded-md max-w-6xl">
                 <h1 class="text-3xl mb-4 font-bold text-center md:text-left">Lo más buscado.</h1>
                 <div class="bg-gray-900 p-6 rounded-lg grid md:grid-cols-3 gap-3">
-                    <div class="text-left card bg-gray-800 rounded-md p-4 text-gray-400 font-semibold text-base">
+                    @foreach ($categorias as $categoria)
+                        <div class="text-left card bg-gray-800 rounded-md p-4 text-gray-400 font-semibold text-base">
                         <div class="flex justify-between">
-                            <h1>Full Stack Developer</h1>
+                            <h1>{{ $categoria->name }}</h1>
                         </div>
-                        <p class="font-light mt-2 text-left">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum placeat, accusantium aspernatur et inventore animi similique corrupti nemo quidem a enim dolorem rem corporis quas veritatis exercitationem optio repudiandae consequatur!</p>
+                        <p class="font-light mt-2 text-left">{{ $categoria->description }}</p>
                         <div class="mt-4">
                             <a href="#" class="bg-gray-700 px-6 hover:bg-gray-600 transition py-1 rounded-md">Ver mas</a>
                         </div>
                     </div>
-                    <div class="text-left card bg-gray-800 rounded-md p-4 text-gray-400 font-semibold text-base">
-                        <div class="flex justify-between">
-                            <h1>Full Stack Developer</h1>
-                        </div>
-                        <p class="font-light mt-2 text-left">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum placeat, accusantium aspernatur et inventore animi similique corrupti nemo quidem a enim dolorem rem corporis quas veritatis exercitationem optio repudiandae consequatur!</p>
-                        <div class="mt-4">
-                            <a href="#" class="bg-gray-700 px-6 hover:bg-gray-600 transition py-1 rounded-md">Ver mas</a>
-                        </div>
-                    </div>
-                    <div class="text-left card bg-gray-800 rounded-md p-4 text-gray-400 font-semibold text-base">
-                        <div class="flex justify-between">
-                            <h1>Full Stack Developer</h1>
-                        </div>
-                        <p class="font-light mt-2 text-left">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum placeat, accusantium aspernatur et inventore animi similique corrupti nemo quidem a enim dolorem rem corporis quas veritatis exercitationem optio repudiandae consequatur!</p>
-                        <div class="mt-4">
-                            <a href="#" class="bg-gray-700 px-6 hover:bg-gray-600 transition py-1 rounded-md">Ver mas</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="masBuscado">
-            <div class="px-5 mx-auto rounded-md max-w-6xl">
-                <h1 class="text-lg font-bold text-center md:text-left">Lo mas buscado</h1>
-                <div class="cards">
-
+                    @endforeach
                 </div>
             </div>
         </section>
