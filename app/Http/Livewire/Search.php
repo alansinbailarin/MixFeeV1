@@ -8,7 +8,7 @@ use App\Models\Job;
 class Search extends Component
 {
     public $search;
-    public $error = "No se han encontrado resultadios.";
+    public $error = "No se han encontrado resultados.";
 
     public function render()
     {
@@ -16,9 +16,11 @@ class Search extends Component
     }
 
     public function getResultsProperty(){
-
         if($this->search != null) {
-            return Job::where('title', 'LIKE', '%' . $this->search . '%')->where('status', 2)->take(5)->get();
+            $this->validate([
+                "search" => "min:2"
+            ]);
+            return Job::where('title', 'LIKE', '%' . trim($this->search) . '%')->where('status', 2)->take(5)->get();
         }
         else {
             return $this->error;
