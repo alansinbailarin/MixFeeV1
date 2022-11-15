@@ -26,16 +26,22 @@
         </section>
         <section id="masBuscado" class="mb-4">
             <div class="px-5 mx-auto rounded-md max-w-6xl">
-                <h1 class="text-3xl mb-4 font-bold text-center md:text-left">Lo más buscado.</h1>
+                <h1 class="text-3xl mb-8 font-bold text-center">Lo más buscado</h1>
                 <div class="bg-gray-900 p-6 rounded-lg grid md:grid-cols-3 gap-3">
                     @foreach ($categorias as $categoria)
                         <div class="text-left card bg-gray-800 rounded-md p-4 text-gray-400 font-semibold text-base">
                         <div class="flex justify-between">
                             <h1>{{ $categoria->name }}</h1>
+                            <div class="cursor-pointer hover:text-gray-600 transition-all ">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+                                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                    <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                                </svg>
+                            </div>
                         </div>
-                        <p class="font-light mt-2 text-left">{{ $categoria->description }}</p>
+                        <p class="font-light mt-2 text-left">{{ Str::limit($categoria->description, 75, '...') }}</p>
                         <div class="mt-4">
-                            <a href="#" class="bg-gray-700 px-6 hover:bg-gray-600 transition py-1 rounded-md">Ver mas</a>
+                            <a href="{{route('jobs.category', $categoria)}}" class="bg-gray-700 px-6 hover:bg-gray-600 transition py-1 rounded-md">Ver mas</a>
                         </div>
                     </div>
                     @endforeach
