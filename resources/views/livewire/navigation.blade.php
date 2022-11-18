@@ -53,6 +53,7 @@
               </div>
               <hr class="mt-2 ml-3 mr-3 text-gray-200">
               <div class="mt-4 text-gray-500">
+                <!-- Aqui se encuentra en donde te va a redirigir para ver el perfil de una persona -->
                 <a href="#" class="block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="user-menu-item-0">Mi perfil</a>
                 <a href="{{ route('profile.show') }}" class="block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="user-menu-item-1">Configuracion</a>
                 <a href="{{ url('admin/dashboard') }}" class="block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="user-menu-item-1">Panel de administrador</a>

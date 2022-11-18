@@ -78,7 +78,7 @@
                             <p class="text-base text-gray-500  mt-1">{{$job->category->name}}</p>
                         <div class="mt-8">
                             <div class="mt-8">
-                            <a href="{{$job->company_url}}" target="_blank" class="text-white bg-blue-600 rounded-md px-4 py-2 hover:bg-blue-500 baseline ease-out duration-500 ">Aplicar a este trabajo</a>
+                            <a href="{{route('jobs.apply', $job->id)}}" class="text-white bg-blue-600 rounded-md px-4 py-2 hover:bg-blue-500 baseline ease-out duration-500 ">Aplicar a este trabajo</a>
                         </div>
                     </article>
                 </section>
