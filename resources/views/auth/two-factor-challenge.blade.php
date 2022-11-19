@@ -47,7 +47,7 @@
                         {{ __('Use an authentication code') }}
                     </button>
 
-                    <x-jet-button class="ml-4">
+                    <x-jet-button class="ml-4 bg-violet-700 baseline hover:bg-violet-500 baseline ease-out duration-500">
                         {{ __('Log in') }}
                     </x-jet-button>
                 </div>

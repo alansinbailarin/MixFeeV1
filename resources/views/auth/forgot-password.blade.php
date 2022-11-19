@@ -26,7 +26,7 @@
             </div>
 
             <div class="flex items-center justify-end mt-4">
-                <x-jet-button>
+                <x-jet-button class="bg-violet-700 baseline hover:bg-violet-500 baseline ease-out duration-500">
                     {{ __('Reiniciar contraseña') }}
                 </x-jet-button>
             </div>
