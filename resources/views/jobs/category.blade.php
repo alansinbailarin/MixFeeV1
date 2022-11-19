@@ -17,7 +17,7 @@
                             <img alt="{{$job->user->name}}" src="{{$job->user->profile_photo_url}}" class="w-12 h-12 object-cover rounded-full">
                         </figure>
                         <div class="flex-1">
-                            <a href="#" class="font-semibold text-blue-500 text-base">{{ $job->user->name}}</a>
+                            <a href="{{route('profile.user-profile', $job->user->id)}}" class="font-semibold text-blue-500 text-base">{{ $job->user->name}}</a>
                             <p class="text-gray-400" href="">{{ $job->user->current_job}}</p>
                         </div>
                     </div>

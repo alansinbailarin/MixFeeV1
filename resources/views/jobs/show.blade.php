@@ -97,7 +97,7 @@
                                         <img alt="{{$similar->user->name}}" src="{{$similar->user->profile_photo_url}}" class="w-12 h-12 object-cover rounded-full">
                                     </figure>
                                     <div class="flex-1 mt-2">
-                                        <a href="#" class="font-semibold text-blue-500 text-base">{{ $similar->user->name}}</a>
+                                        <a href="{{route('profile.user-profile', $similar->user->id)}}" class="font-semibold text-blue-500 text-base">{{ $similar->user->name}}</a>
                                         <p class="text-gray-400 text-sm font-thin" href="">{{ $similar->user->current_job}} en {{ $similar->company }}</p>
                                     </div>
                                     <div>
@@ -117,7 +117,7 @@
                                 <img alt="{{$job->user->name}}" src="{{$job->user->profile_photo_url}}" class="w-12 h-12 object-cover rounded-full">
                             </figure>
                             <div class="flex-1">
-                                <a href="#" class="font-semibold text-blue-500 text-base">{{ $job->user->name}}</a>
+                                <a href="{{route('profile.user-profile', $job->user_id)}}" class="font-semibold text-blue-500 text-base">{{ $job->user->name}}</a>
                                 <p class="text-gray-400" href="">{{ $job->user->current_job}}</p>
                                 
                             </div>

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\ConsultaController;
+use App\Http\Controllers\ProfileController;
 
 Route::get('/', [JobController::class, 'index'])->name('jobs.index');
 
@@ -23,3 +24,5 @@ Route::get('category/{category}', [JobController::class, 'category'])->name('job
 Route::get('tags/{tag}', [JobController::class, 'tag'])->name('jobs.tag');
 
 Route::get('admin/dashboard',[ConsultaController::class, 'index']);
+
+Route::get('profile/{id}', [JobController::class, 'showProfile'])->name('profile.user-profile');
