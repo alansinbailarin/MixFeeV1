@@ -16,7 +16,9 @@
                             Sabemos que encontrar empleo puede ser dificil, por eso te ofrecemos la alternativa de hacerlo, de la mano de MixFee.
                         </p>
                         <div class="flex justify-center md:justify-start">
-                            <a href="#buscarEmpleo" class="p-3 px-8 text-white bg-gray-900 rounded-md baseline ease-out duration-500 font-medium hover:bg-gray-800">Estoy buscando talento</a>
+                            <a href="{{route('jobs.publish')}}" class="p-3 px-8 text-white bg-gray-900 rounded-md baseline ease-out duration-500 font-medium hover:bg-gray-800 inline-flex">Estoy buscando talento<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-right mt-1 ml-2" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                              </svg></a>
                         </div>
                 </div>
                 <div class="md:w-1/2 hidden md:flex">

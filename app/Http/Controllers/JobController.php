@@ -13,8 +13,14 @@ use App\Http\Controllers\CategoryController;
 
 class JobController extends Controller
 {
+    public function publishNewJob(){
+        return view('jobs.publish');
+    }
+
+    public function messagesView(Job $id){
+        return view('jobs.apply', compact('id'));
+    }
     public function index(){
-        // $allCounter = Job::all()->count(); <- 'allCounter' ese va en el compact
         $counting = Job::where('status', 2)->count();
 
         $jobs = Job::where('status', 2)
@@ -22,10 +28,6 @@ class JobController extends Controller
         ->paginate(12);
 
         $categorias = Category::orderBy('clicks','DESC')->limit(3)->get();
-
-        // $categorias = Category::select('name', 'description', 'clicks')
-        // ->get()
-        // ->take(3);
     
         return view('jobs.index', compact('categorias', 'jobs', 'counting'));
     }
