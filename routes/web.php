@@ -30,4 +30,7 @@ Route::get('messages/{message}', [MessageController::class, 'show'])->name('mess
 Route::post('messages', [MessageController::class, 'store'])->name('messages.store');
 Route::get('apply/{id}', [JobController::class, 'messagesView'])->name('jobs.apply')->middleware('auth');
 Route::get('publish', [JobController::class, 'publishNewJob'])->name('jobs.publish')->middleware('auth');
+<<<<<<< HEAD
 Route::get('profile/{id}', [JobController::class, 'showProfile'])->name('profile.user-profile');
+=======
+>>>>>>> 8c05a007b3f8f89c64d7a28be145fe0658b64e46
