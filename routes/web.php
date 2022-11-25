@@ -31,3 +31,4 @@ Route::post('messages', [MessageController::class, 'store'])->name('messages.sto
 Route::get('apply/{id}', [JobController::class, 'messagesView'])->name('jobs.apply')->middleware('auth');
 Route::get('publish', [JobController::class, 'publishNewJob'])->name('jobs.publish')->middleware('auth');
 Route::get('profile/{id}', [JobController::class, 'showProfile'])->name('profile.user-profile');
+Route::get('cv/pdf/{id}', [JobController::class, 'pdf'])->name('profile.cv');

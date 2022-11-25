@@ -23,13 +23,18 @@
                                 <span class="ml-auto">{{$user->created_at->format('d-m-Y')}}</span>
                             </li>
                         </ul>
-                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                            Button
-                          </button>
+                       <!-- <div class="my-4"></div>
+                        <div class="flex justify-center">
+                            <div class="text-center object-fill w-full">  ⬅️ THIS DIV WILL BE CENTERED 
+                                <a href="{{route('profile.cv', $user->id)}}" class="items-center  object-cover hidden md:block py-2 px-20 rounded-md text-white font-medium text-base bg-violet-700 baseline hover:bg-violet-500 baseline ease-out duration-500">
+                                    Generer CV
+                                </a>  
+                            </div>
+                          </div>-->
                     </div>
                     <!-- End of profile card -->
                     <div class="my-4"></div>
-                </div>
+                </div>       
                 <!-- Right Side -->
                 <div class="w-full md:w-9/12 mx-2 h-64">
                     <!-- Profile tab -->
@@ -169,12 +174,15 @@
                                     </div>
                                     @endforeach 
                             </div>
+                            
                         </div> 
                     </div>
                     <!-- End of friends card -->
                     
                 </div>
+                
             </div>
         </div>
     </div>
+    <div class="my-40"></div>
 </x-app-layout>

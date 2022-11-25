@@ -10,6 +10,7 @@ use App\Models\Tag;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\CategoryController;
+use PDF;
 
 class JobController extends Controller
 {
@@ -118,5 +119,17 @@ class JobController extends Controller
         ->get();
         return view('profile.user-profile',compact('user','simiPro'));
     }
+
+    public function pdf($id){
+        $userPDF = User::find($id);
+        return view('profile.cv',compact('userPDF'));
+    }
+    public function pdlf($id){
+          $userPDF = User::find($id);
+          $pdf = PDF::loadView('profile.cv',['userPDF'=>$userPDF])
+          ->set_option( 'dpi', 254);
+          return $pdf->stream('CV-'.time().'.pdf');
+    }
+
     
 }
