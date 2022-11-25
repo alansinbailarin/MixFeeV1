@@ -22,9 +22,8 @@ return new class extends Migration
             $table->unsignedBigInteger('to_user_id');
             $table->foreign('to_user_id')->references('id')->on('users');
 
-            $table->string('subject');
-            $table->text('body');
-            $table->files('resume');
+            $table->binary('subject')->nullable();
+            $table->text('body')->nullable();
             
             $table->timestamps();
         });

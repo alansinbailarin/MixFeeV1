@@ -17,8 +17,10 @@ class JobController extends Controller
     }
 
     public function messagesView(Job $id){
+
         return view('jobs.apply', compact('id'));
     }
+
     public function index(){
         $counting = Job::where('status', 2)->count();
 
