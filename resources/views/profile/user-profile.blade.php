@@ -23,6 +23,9 @@
                                 <span class="ml-auto">{{$user->created_at->format('d-m-Y')}}</span>
                             </li>
                         </ul>
+                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                            Button
+                          </button>
                     </div>
                     <!-- End of profile card -->
                     <div class="my-4"></div>
