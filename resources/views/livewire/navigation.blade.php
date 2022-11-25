@@ -48,13 +48,13 @@
               <img class="h-16 w-16 rounded-full -mt-8 border-8 border-white" src="{{ auth()->user()->profile_photo_url }}" alt="">
               </div>
               <div class="text-center">
-                <a href="#{{-- {{ route('profile.show') }} --}}" class="block px-4 text-sm text-gray-700 font-semibold">{{auth()->user()->name}}</a>
+                <a href="{{route('profile.user-profile', auth()->user()->id)}}" class="block px-4 text-sm text-gray-700 font-semibold">{{auth()->user()->name}}</a>
                 <p class="block px-4 py2 text-xs font-thin text-gray-300">{{auth()->user()->ocupation}}</p>   
               </div>
               <hr class="mt-2 ml-3 mr-3 text-gray-200">
               <div class="mt-4 text-gray-500">
-                <!-- Aqui se encuentra en donde te va a redirigir para ver el perfil de una persona -->
-                <a href="#" class="block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="user-menu-item-0">Mi perfil</a>
+                <a href="{{route('profile.user-profile', auth()->user()->id)}}" class="block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="user-menu-item-0">Mi perfil</a>
+                <a href="{{route('profile.cv', auth()->user()->id)}}" class="block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="user-menu-item-1">Generar CV</a>
                 <a href="{{ route('profile.show') }}" class="block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="user-menu-item-1">Configuracion</a>
                 <a href="{{ url('admin/dashboard') }}" class="block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="user-menu-item-1">Panel de administrador</a>
                 <form method="POST" action="{{ route('logout') }}" x-data>
