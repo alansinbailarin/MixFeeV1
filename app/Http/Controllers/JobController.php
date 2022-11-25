@@ -7,13 +7,23 @@ use Illuminate\Support\Facades\Http;
 use Illuminate\Http\Request;
 use App\Models\Job;
 use App\Models\Tag;
+use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\CategoryController;
+use PDF;
 
 class JobController extends Controller
 {
+    public function publishNewJob(){
+        return view('jobs.publish');
+    }
+
+    public function messagesView(Job $id){
+
+        return view('jobs.apply', compact('id'));
+    }
+
     public function index(){
-        // $allCounter = Job::all()->count(); <- 'allCounter' ese va en el compact
         $counting = Job::where('status', 2)->count();
 
         $jobs = Job::where('status', 2)
@@ -21,10 +31,6 @@ class JobController extends Controller
         ->paginate(12);
 
         $categorias = Category::orderBy('clicks','DESC')->limit(3)->get();
-
-        // $categorias = Category::select('name', 'description', 'clicks')
-        // ->get()
-        // ->take(3);
     
         return view('jobs.index', compact('categorias', 'jobs', 'counting'));
     }
@@ -107,5 +113,25 @@ class JobController extends Controller
         $LTags =DB:: select("call spLatestTags()");
         return response()->json($LTags);
     }
+
+    public function showProfile($id){
+        $user = User::find($id);
+        $simiPro = User::latest()
+        ->take(6)
+        ->get();
+        return view('profile.user-profile',compact('user','simiPro'));
+    }
+
+    public function pdf($id){
+        $userPDF = User::find($id);
+        return view('profile.cv',compact('userPDF'));
+    }
+    public function pdlf($id){
+          $userPDF = User::find($id);
+          $pdf = PDF::loadView('profile.cv',['userPDF'=>$userPDF])
+          ->set_option( 'dpi', 254);
+          return $pdf->stream('CV-'.time().'.pdf');
+    }
+
     
 }

@@ -78,7 +78,7 @@
                             <p class="text-base text-gray-500  mt-1">{{$job->category->name}}</p>
                         <div class="mt-8">
                             <div class="mt-8">
-                            <a href="{{$job->company_url}}" target="_blank" class="text-white bg-blue-600 rounded-md px-4 py-2 hover:bg-blue-500 baseline ease-out duration-500 ">Aplicar a este trabajo</a>
+                            <a href="{{route('jobs.apply', $job->id)}}" class="text-white bg-blue-600 rounded-md px-4 py-2 hover:bg-blue-500 baseline ease-out duration-500 ">Aplicar a este trabajo</a>
                         </div>
                     </article>
                 </section>
@@ -97,7 +97,7 @@
                                         <img alt="{{$similar->user->name}}" src="{{$similar->user->profile_photo_url}}" class="w-12 h-12 object-cover rounded-full">
                                     </figure>
                                     <div class="flex-1 mt-2">
-                                        <a href="#" class="font-semibold text-blue-500 text-base">{{ $similar->user->name}}</a>
+                                        <a href="{{route('profile.user-profile', $similar->user->id)}}" class="font-semibold text-blue-500 text-base">{{ $similar->user->name}}</a>
                                         <p class="text-gray-400 text-sm font-thin" href="">{{ $similar->user->current_job}} en {{ $similar->company }}</p>
                                     </div>
                                     <div>
@@ -117,7 +117,7 @@
                                 <img alt="{{$job->user->name}}" src="{{$job->user->profile_photo_url}}" class="w-12 h-12 object-cover rounded-full">
                             </figure>
                             <div class="flex-1">
-                                <a href="#" class="font-semibold text-blue-500 text-base">{{ $job->user->name}}</a>
+                                <a href="{{route('profile.user-profile', $job->user_id)}}" class="font-semibold text-blue-500 text-base">{{ $job->user->name}}</a>
                                 <p class="text-gray-400" href="">{{ $job->user->current_job}}</p>
                                 
                             </div>
