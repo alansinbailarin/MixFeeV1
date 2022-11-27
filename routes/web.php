@@ -1,5 +1,6 @@
 <?php
 
+use App\Events\MessageSent;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\ConsultaController;
@@ -32,3 +33,8 @@ Route::get('apply/{id}', [JobController::class, 'messagesView'])->name('jobs.app
 Route::get('publish', [JobController::class, 'publishNewJob'])->name('jobs.publish')->middleware('auth');
 Route::get('profile/{id}', [JobController::class, 'showProfile'])->name('profile.user-profile');
 Route::get('cv/pdf/{id}', [JobController::class, 'pdf'])->name('profile.cv');
+
+// rutas para enviar y recibir mensages
+Route::get('messageSent',function(){
+    event(new MessageSent());
+} );
