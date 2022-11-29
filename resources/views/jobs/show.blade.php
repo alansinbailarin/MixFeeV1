@@ -2,7 +2,7 @@
     <div class="max-w-6xl mx-auto mt-10 px-2 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-3">
             <div class="col-span-2">
-                <section class="card bg-white border border-gray-100 shadow-md rounded-md md:mr-3">
+                <section class="card bg-white border border-gray-200 rounded-md md:mr-3">
                     <article class="card-body m-8 ">
                         <div class="flex items-start">
                             <div class="flex items-start">
@@ -85,7 +85,7 @@
                 <aside>
                     <h1 class="m-5 font-bold text-xl text-gray-500 text-center md:text-left">Puestos similares</h1>
                     @foreach ($similares as $similar)
-                        <article class="mt-2 card bg-white border border-gray-100 shadow-md rounded-md md:ml-0">
+                        <article class="mt-2 card bg-white border border-gray-200 rounded-md md:ml-0">
                             <div class="card-body m-8 text-sm">
                                 <h1>
                                     <a class="font-bold text-gray-500 text-sm" href="{{route('jobs.show', $similar)}}">{{$similar->title}}</a>
@@ -110,7 +110,7 @@
                 </aside>
             </div>
             <div class="col-span-1">
-                <section class="card bg-white border border-gray-100 shadow-md rounded-md ml-3 hidden md:flex">
+                <section class="card bg-white border border-gray-200 rounded-md ml-3 hidden md:flex">
                     <div class="card-body m-8 text-sm">
                         <div class="flex items-center">
                             <figure class="flex-shrink-0 mr-4">

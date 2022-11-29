@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Message;
 use App\File;
+use App\Models\User;
+use App\Notifications\MessageSent;
 
 class MessageController extends Controller
 {
@@ -17,22 +19,15 @@ class MessageController extends Controller
             'subject'  => 'required',
             'subject.*' => 'mimes:doc,pdf,docx,zip,png,jpge,jpg',
         ]);
-        Message::create([
+        $message = Message::create([
             'subject' => $request->subject,
             'body' => $request->body,
             'from_user_id' => auth()->id(),
             'to_user_id' => $request->to_user_id
         ]);
 
-        if($request->hasfile('subject'))
-         {
-            foreach($request->file('subject') as $file)
-            {
-                $name = time().'.'.$file->extension();
-                $file->move(base_path() . '/storage/app/public', $name);
-                $data[] = $name;
-            }
-         }
+        $user = User::find($request->to_user_id);
+        $user->notify(new MessageSent($message));
 
         session()->flash('flash.banner','Your message has been sent!');
         session()->flash('flash.bannerStyle','success');
