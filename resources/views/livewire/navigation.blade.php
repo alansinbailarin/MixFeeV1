@@ -36,6 +36,7 @@
           </div>
         </div>
         @auth
+        @livewire('notification-component')
         <div class="absolute inset-y-0 right-0 hidden items-center pr-2  sm:flex sm:ml-6 sm:pr-0">
           <div class="ml-3 relative" x-data="{ open: false }">
             <div>
@@ -67,7 +68,7 @@
         </div>
         @else
           <!-- <a href="{{ route('login') }}" class="hidden md:block mr-2 py-2 px-8 text-violet-600 bg-gray-100 font-medium text-base ease-out duration-500 rounded-md">Soy empresa</a> -->
-          <a href="{{ route('register') }}" class="hidden md:block py-2 px-8 rounded-md text-white font-medium text-base bg-violet-700 baseline hover:bg-violet-500 baseline ease-out duration-500">¡Unete!</a>    
+          <a href="{{ route('register') }}" class="md:block py-2 px-8 rounded-md text-white font-medium text-base bg-violet-700 baseline hover:bg-violet-500 baseline ease-out duration-500">¡Unete!</a>    
         @endauth
       </div>
     </div>
@@ -75,7 +76,7 @@
       <div class="px-2 pt-2 pb-3 space-y-1">
         <a href="/" class="hover:bg-gray-100 text-violet-700 block px-3 md:text-violet-700 py-2 rounded-md text-base font-medium" aria-current="page">Inicio</a>
         <hr>
-        <span href="/" class="hover:bg-gray-100  text-violet-700 block px-3 py-2 md:text-violet-700 rounded-md text-base font-medium" aria-current="page">Categorias</span>
+        <span href="/" class="hover:bg-gray-100 text-gray-700 block px-3 py-2 md:text-violet-700 rounded-md text-base font-medium" aria-current="page">Categorias</span>
         @foreach ($categories as $category)
           <a href="{{route('jobs.category', $category)}}" class="hover:bg-gray-100 text-gray-500 font-normal block px-3 py-2 rounded-md text-base" aria-current="page">{{ $category->name }}</a>
         @endforeach
@@ -91,7 +92,8 @@
               </div>
           </div>
           <div class="mt-3 space-y-1">
-              <a class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:bg-gray-100 transition rounded-md" href="#" data-turbo="false">Perfil</a>
+              <a class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:bg-gray-100 transition rounded-md" href="{{route('profile.user-profile', auth()->user()->id)}}" data-turbo="false">Perfil</a>
+              <a href="{{route('profile.cv', auth()->user()->id)}}" class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:bg-gray-100 transition rounded-md" role="menuitem" tabindex="-1" id="user-menu-item-1">Generar CV</a>
               <a class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:bg-gray-100 transition rounded-md" href="{{ route('profile.show')}}" data-turbo="false">Configuracion</a>
               <a href="{{ url('admin/dashboard') }}" class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:bg-gray-100 transition rounded-md" role="menuitem" tabindex="-1" id="user-menu-item-1">Panel de administrador</a>
 
@@ -101,10 +103,10 @@
                 <a class="block mt-2 pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:bg-gray-100 rounded-md transition" href="{{ route('logout') }}" @click.prevent="$root.submit();" data-turbo="false">Cerrar sesión</a>
               </form>
           </div>
-        @else
+        {{-- @else
         <hr>
           <a href="{{ route('login') }}" class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:bg-gray-100 rounded-md transition">Inicia sesión</a>
-          <a href="{{ route('register') }}" class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-white bg-blue-600 hover:bg-blue-300 rounded-md  transition">Registrate</a>
+          <a href="{{ route('register') }}" class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-white bg-blue-600 hover:bg-blue-300 rounded-md  transition">Registrate</a> --}}
         @endauth
       </div>
     </div>

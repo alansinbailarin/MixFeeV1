@@ -70,8 +70,8 @@
                                 <img src="@if($job->image) {{Storage::url($job->image->url)}} @else img/logomixfee.png @endif" alt="" class="w-14 h-14 rounded-full object-cover">
                             </div> --}}
                             <div class="mr-8 flex flex-col items-start justify-center">
-                                <p class="text-gray-400 font-light text-left ">Publicado {{$job->created_at->diffForHumans()}} en {{ $job->location }}</p>
-                                <a href="{{route('jobs.show', $job)}}" class="text-xl font-bold text-gray-500 mb-1 text-left ">{{ $job->title }}</a>
+                                <p class="text-gray-400 font-light text-left text-sm">Publicado {{$job->created_at->diffForHumans()}} en {{ $job->location }}</p>
+                                <a href="{{route('jobs.show', $job)}}" class="text-xl font-bold text-gray-700 mb-1 text-left ">{{ $job->title }}</a>
                                 <p class="text-normal font-extralight text-gray-400">{{ $job->type }}</p>
                                 <p class="leading-relaxed text-gray-500 text-left hidden md:flex">{{ Str::limit($job->description, 150, '...') }}</p> 
                                 
@@ -85,10 +85,7 @@
                             </div>
                         </div>
                     </article>
-                    
                     @endforeach
-
-                    
                 </div>
                 <div class="mt-10">
                         {{$jobs->links()}}
