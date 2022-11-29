@@ -64,4 +64,12 @@ class User extends Authenticatable
     public function jobs(){
         return $this->hasMany(Job::class);
     }
+
+    public function chats(){
+        return $this->belongsToMany('App\Models\Chat');
+    }
+
+    public function messages(){
+        return $this->hasMany(Messagesent::class);
+    }
 }
