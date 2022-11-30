@@ -23,6 +23,17 @@
                                 <span class="ml-auto">{{$user->created_at->format('d-m-Y')}}</span>
                             </li>
                         </ul>
+                         <div class="my-4"></div>
+                         {{-- validacion YO NO ME PUEDO ENVIAR MENSAGES --}}
+                         @if ($user->id != auth()->id()) 
+                        <div class="flex justify-center">
+                            <div class="text-center object-fill w-full">
+                                <a href={{route('chat.with', $user->id)}} class="items-center  object-cover hidden md:block py-2 px-20 rounded-md text-white font-medium text-base bg-violet-700 baseline hover:bg-violet-500 baseline ease-out duration-500">
+                                    Contactar
+                                </a>  
+                            </div>
+                        </div>
+                        @endif
                        <!-- <div class="my-4"></div>
                         <div class="flex justify-center">
                             <div class="text-center object-fill w-full">  ⬅️ THIS DIV WILL BE CENTERED 
