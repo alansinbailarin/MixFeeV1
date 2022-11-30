@@ -7,11 +7,24 @@ use App\Models\Message;
 use App\File;
 use App\Models\User;
 use App\Notifications\MessageSent;
+use Illuminate\Support\Facades\DB;
 
 class MessageController extends Controller
 {
     public function show(Message $message){
-        return view('messages.show', compact('message'));
+        $sender = User::find($message->from_user_id);
+        // $message = Message::where('to_user_id', auth()->id())
+        // ->get();
+
+        return view('messages.show', compact('message', 'sender'));
+    }
+
+    public function getNotifications(Message $message){
+        $sender = User::find($message->from_user_id);
+        $messages = Message::where('to_user_id', auth()->id())
+        ->get();
+
+        return view('messages.all', compact('messages', 'sender'));
     }
 
     public function store(Request $request){

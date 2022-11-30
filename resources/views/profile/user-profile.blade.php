@@ -7,7 +7,7 @@
                 <!-- Left Side -->
                 <div class="w-full md:w-3/12 md:mx-2">
                     <!-- Profile Card -->
-                    <div class="bg-white p-3 border-t-4 border-violet-400 ">
+                    <div class="bg-white p-3 rounded-md border border-gray-200">
                         <div class="image overflow-hidden">
                             <img class="h-auto w-full mx-auto"
                             alt="{{$user->name}}" src="{{$user->profile_photo_url}}">
@@ -39,7 +39,7 @@
                 <div class="w-full md:w-9/12 mx-2 h-64">
                     <!-- Profile tab -->
                     <!-- About Section -->
-                    <div class="bg-white p-3 shadow-sm rounded-sm">
+                    <div class="bg-white p-3 rounded-md border border-gray-200">
                         <div class="flex items-center space-x-2 font-semibold text-gray-900 leading-8">
                             <span clas="text-green-500">
                                 <svg class="h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -102,7 +102,7 @@
                     <div class="my-2"></div>
     
                     <!-- Experience and education -->
-                    <div class="bg-white p-3 shadow-sm rounded-sm">
+                    <div class="bg-white p-3 rounded-md border border-gray-200">
                         <div class="grid grid-cols-2">
                             <div>
                                 <div class="flex items-center space-x-2 font-semibold text-gray-900 leading-8 mb-3">
@@ -119,7 +119,7 @@
                                 <ul class="list-inside space-y-2">
                                     <li>
                                         @foreach (explode(',', $user->interests) as $int)
-                                        <li class="text-violet-600">• {{ trim($int)}}</li>
+                                        <li class="text-gray-700">• {{ trim($int)}}</li>
                                     @endforeach
                                     </li>
                                 </ul>
@@ -141,7 +141,7 @@
                                 <ul class="list-inside space-y-2">
                                     <li>
                                         @foreach (explode(',', $user->education) as $edu)
-                                            <li class="text-violet-600">• {{ trim($edu)}}</li>
+                                            <li class="text-gray-700">• {{ trim($edu)}}</li>
                                         @endforeach
                                     </li>
                                 </ul>
@@ -152,7 +152,7 @@
                     <!-- End of profile tab -->
                     <div class="my-2"></div>
                     <!-- Friends card -->
-                    <div class="bg-white p-3 shadow-sm rounded-sm">
+                    <div class="bg-white p-3 rounded-md border border-gray-200">
                         <div class="bg-white p-3">
                             <div class="flex items-center space-x-3 font-semibold text-gray-900 text-xl leading-8">
                                 <span class="text-violet-500">
@@ -170,17 +170,14 @@
                                     <div class="text-center my-2">
                                         <img class="h-16 w-16 rounded-full mx-auto"
                                         alt="{{$p->name}}" src="{{$p->profile_photo_url}}"href="{{route('profile.user-profile', $p->id)}}">
-                                        <a href="{{route('profile.user-profile', $p->id)}}" class="text-main-color">{{$p->name}}</a>
+                                        <a href="{{route('profile.user-profile', $p->id)}}" class="text-blue-700 font-semibold text-sm">{{$p->name}}</a>
                                     </div>
                                     @endforeach 
                             </div>
-                            
                         </div> 
                     </div>
                     <!-- End of friends card -->
-                    
                 </div>
-                
             </div>
         </div>
     </div>

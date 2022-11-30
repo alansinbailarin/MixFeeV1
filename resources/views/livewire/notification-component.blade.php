@@ -16,11 +16,15 @@
         </x-slot>
         <x-slot name="content">
             <div class="w-60">
-                <div class="block px-4 py-2 text-sm text-gray-600 font-semibold">
-                    Notificaciones
+                <div class="flex justify-between px-4 py-2 text-sm text-gray-600 font-semibold">
+                    <p>Notificaciones</p>
+                    @if (auth()->user()->notifications->count() > 0)
+                        <a href="{{route('messages.all')}}" class="text-blue-600 hover:text-blue-500">Ver más</a>                        
+                    @endif
                 </div>
                 <ul>
-                    @foreach ($notifications as $notification)
+                    @if (auth()->user()->notifications->count() > 0)
+                        @foreach ($notifications as $notification)
                         <li wire:click="read('{{$notification->id}}')" class="{{ !$notification->read_at ? 'bg-gray-100' : '' }}">
                             <x-jet-dropdown-link href="{{$notification->data['url']}}" class="text-gray-400">
                                 {{ $notification->data['message'] }}
@@ -32,7 +36,10 @@
                                 </div>
                             </x-jet-dropdown-link>
                         </li>
-                    @endforeach
+                        @endforeach
+                    @else
+                        <p class="block px-4 py-2 text-sm text-gray-400">No hay notificaciones</p>
+                    @endif
                 </ul>
             </div>
         </x-slot>

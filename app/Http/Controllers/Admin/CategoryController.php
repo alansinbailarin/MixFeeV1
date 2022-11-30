@@ -40,6 +40,7 @@ class CategoryController extends Controller
 
         $request->validate([
             'name' => 'required',
+            'description' => 'required',
             'slug' => 'required|unique:categories',
         ]);
 
@@ -81,6 +82,7 @@ class CategoryController extends Controller
     {
         $request->validate([
             'name' => 'required',
+            'description' => 'required',
             'slug' => "required|unique:categories,slug, $category->id"
         ]);
 
