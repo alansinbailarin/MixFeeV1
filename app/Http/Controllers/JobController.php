@@ -10,6 +10,7 @@ use App\Models\Tag;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\CategoryController;
+use Carbon\Carbon;
 use PDF;
 
 class JobController extends Controller

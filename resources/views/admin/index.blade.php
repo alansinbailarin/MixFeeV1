@@ -192,7 +192,7 @@
                                 {{$latest->email}}
                             </td>
                             <td>
-                                {{$latest->created_at->formatLocalized("%A %d %B %Y")}}
+                                {{$latest->created_at->format('Y-m-d')}}
                             </td>
                         </tr>
                         @endforeach
