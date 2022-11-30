@@ -16,6 +16,7 @@
         "laravel/tinker": "^2.7",
         "laravelcollective/html": "^6.3",
         "livewire/livewire": "^2.5",
+        "nesbot/carbon": "^2.63",
         "pusher/pusher-php-server": "~7.0.2"
     },
     "require-dev": {

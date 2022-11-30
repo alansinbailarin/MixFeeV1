@@ -11,7 +11,7 @@
                             </div>
                             {{-- <p class="ml-auto text-sm text-gray-400">Publicado hace {{ $job->created_at->diffForHumans()}}</p> --}}
                         </div>
-                        <a href="#" class="text-gray-400 font-semibold"><span class="text-gray-400 font-light md:hidden">Publicado el {{$job->created_at->formatLocalized("%A %d %B %Y")}} por</span> {{ $job->company }} <span class="text-gray-400 font-light md:hidden">en {{$job->location}}</span></a>
+                        <a href="#" class="text-gray-400 font-semibold"><span class="text-gray-400 font-light md:hidden">{{$job->created_at->formatLocalized("%A %d %B %Y")}} por</span> {{ $job->company }} <span class="text-gray-400 font-light md:hidden">en {{$job->location}}</span></a>
                         <div class="flex items-center mt-6 md:hidden">
                             <figure class="flex-shrink-0 mr-4">
                                 <img alt="{{$job->user->name}}" src="{{$job->user->profile_photo_url}}" class="w-12 h-12 object-cover rounded-full">
@@ -89,7 +89,7 @@
                             <div class="card-body m-8 text-sm">
                                 <h1>
                                     <a class="font-bold text-gray-500 text-sm" href="{{route('jobs.show', $similar)}}">{{$similar->title}}</a>
-                                    <p class="font-xs text-gray-400 font-light">Publicado el {{$similar->created_at->formatLocalized("%A %d %B %Y")}}</p>
+                                    <p class="font-xs text-gray-400 font-light">{{$similar->created_at->diffForHumans()}}</p>
                                     <p class="font-xs text-gray-400 font-light">{{$similar->type}}</p>
                                 </h1>
                                 <div class="flex items-center">
@@ -143,7 +143,7 @@
                         </div>
                         <div class="mt-5">
                             <p class="text-gray-500 font-semibold">Fecha de publicación</p>
-                            <p class="text-gray-400">{{$job->created_at->formatLocalized("%A %d %B %Y")}}</p>
+                            <p class="text-gray-400">{{$job->created_at->diffForHumans()}}</p>
                         </div>
                         <div class="mt-5">
                             <p class="text-gray-500 font-semibold">Telefono de la empresa</p>

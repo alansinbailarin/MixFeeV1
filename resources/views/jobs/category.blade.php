@@ -11,7 +11,7 @@
                         </div>
                         {{-- <p class="ml-auto text-sm text-gray-400">Publicado hace {{ $job->created_at->diffForHumans()}}</p> --}}
                     </div>
-                    <a href="#" class="text-gray-400 font-semibold"><span class="text-gray-400 font-light ">Publicado el {{$job->created_at->formatLocalized("%A %d %B %Y")}} por</span> {{ $job->company }} <span class="text-gray-400 font-light">en {{$job->location}}</span></a>
+                    <a href="#" class="text-gray-400 font-semibold"><span class="text-gray-400 font-light ">{{$job->created_at->diffForHumans()}} por</span> {{ $job->company }} <span class="text-gray-400 font-light">en {{$job->location}}</span></a>
                     <div class="flex items-center mt-6 ">
                         <figure class="flex-shrink-0 mr-4">
                             <img alt="{{$job->user->name}}" src="{{$job->user->profile_photo_url}}" class="w-12 h-12 object-cover rounded-full">

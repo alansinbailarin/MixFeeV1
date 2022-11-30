@@ -192,7 +192,7 @@
                                 {{$latest->email}}
                             </td>
                             <td>
-                                {{$latest->created_at->format('Y-m-d')}}
+                                {{$latest->created_at->diffForHumans()}}
                             </td>
                         </tr>
                         @endforeach
