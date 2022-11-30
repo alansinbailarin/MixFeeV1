@@ -1,5 +1,4 @@
 import "./bootstrap";
-//import "./chat.js";
 import Alpine from "alpinejs";
 import axios from "axios";
 

@@ -35,14 +35,13 @@
         {{-- header --}}
         <div class="flex flex-row items-center h-16  bg-white w-full px-4 py-4 rounded-t-2xl">
           <div class="flex-grow">
-            <div class="flex flex-row items-center hover:bg-gray-50 p-2">
+            <div class="flex flex-row items-center p-2">
               <img id="chatWithImg" class="h-9 w-9 rounded-full" src="https://ui-avatars.com/api/?name=m+f&color=000000&background=fed7aa" alt="">
+              <div id="chatStatus" class="w-3 h-3 rounded-full bg-red-600" style="margin-left: -13px;margin-bottom: -24px;"></div>
               <div class="ml-2 text-sm font-semibold" id="chatWith"></div>
             </div> 
           </div>
-          <div class="ml-4">
-              {{-- aqui icono de conectado --}}
-          </div>
+          <div id="typing" class="italic text-xs text-gray-400 mr-4" style="display: none">Está escribiendo</div>
         </div>
         {{-- mensajes --}}
         <div id="scroll" class="flex flex-col h-full overflow-x-auto">

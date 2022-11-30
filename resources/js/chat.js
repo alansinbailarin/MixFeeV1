@@ -5,15 +5,17 @@ const chatWith = get("chatWith");
 const chatWithImg = get("chatWithImg");
 const chatFriends = get("friends");
 const scroll = get("scroll");
-
-// pendientes
-// const typing = get(".typing");
-// const chatStatus = get(".chatStatus");
+const chatStatus = get("chatStatus");
+const typing = get("typing");
 
 const chatId = window.location.pathname.substring(9);
 var authUser;
+let typingTimer = false;
 
 window.onload = () => {
+    msgerInput.addEventListener("keypress", () => {
+        sendTypingMessage();
+    });
     document.body.style.maxHeight = "100vh";
     document.body.style.overflow = "hidden";
     axios
@@ -115,11 +117,41 @@ function appendMessage(img, side, text) {
     scrollToBottom();
 }
 // Echo Laravel
-window.Echo.join(`chat.${chatId}`).listen("MessageSent", (e) => {
-    // console.log(e.message.user);
-    let avatar = getAvatar(e.message.user.name, false);
-    appendMessage(avatar, "left", e.message.content);
-});
+window.Echo.join(`chat.${chatId}`)
+    .listen("MessageSent", (e) => {
+        let avatar = getAvatar(e.message.user.name, false);
+        appendMessage(avatar, "left", e.message.content);
+    })
+    .here((users) => {
+        let results = users.filter((user) => user.id != authUser.id);
+        if (results.length > 0) {
+            chatStatus.classList.add("bg-green-600");
+            chatStatus.classList.remove("bg-rose-600");
+        }
+    })
+    .joining((users) => {
+        if (users.id != authUser.id) {
+            chatStatus.classList.add("bg-green-600");
+            chatStatus.classList.remove("bg-rose-600");
+        }
+    })
+    .leaving((users) => {
+        if (users.id != authUser.id) {
+            chatStatus.classList.add("bg-red-600");
+            chatStatus.classList.remove("bg-green-600");
+        }
+    })
+    .listenForWhisper("typing", (e) => {
+        if (e > 0) typing.style.display = "";
+        if (typingTimer) {
+            clearTimeout(typingTimer);
+        }
+
+        typingTimer = setTimeout(() => {
+            typing.style.display = "none";
+            typingTimer = false;
+        }, 3000);
+    });
 
 // Utils
 function get(selector, root = document) {
@@ -143,4 +175,8 @@ function getAvatar(name, type) {
         firstNameL + colors
     }`;
     return str;
+}
+
+function sendTypingMessage() {
+    Echo.join(`chat.${chatId}`).whisper("typing", msgerInput.value.length);
 }
