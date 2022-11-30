@@ -7,6 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 use App\Models\User;
+use App\Models\Job;
 
 class MessageSent extends Notification // implements ShouldQueue
 {
@@ -58,13 +59,12 @@ class MessageSent extends Notification // implements ShouldQueue
      */
     public function toDatabase($notifiable)
     {
-
         $notifiable->notification += 1;
         $notifiable->save();
 
         return [
             'url' => route('messages.show', $this->message->id),
-            'message' => 'Has recibido una nueva notificacion de ' . User::find($this->message->from_user_id)->name
+            'message' => 'Tienes una nueva notificación.' //User::find($this->message->from_user_id)->name . 'ha aplicado a '
         ];
     }
 }

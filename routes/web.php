@@ -31,6 +31,7 @@ Route::get('tags/{tag}', [JobController::class, 'tag'])->name('jobs.tag');
 Route::get('admin/dashboard',[ConsultaController::class, 'index']);
 
 Route::get('messages/{message}', [MessageController::class, 'show'])->name('messages.show');
+Route::get('notifications', [MessageController::class, 'getNotifications'])->name('messages.all');
 Route::post('messages', [MessageController::class, 'store'])->name('messages.store');
 Route::get('apply/{id}', [JobController::class, 'messagesView'])->name('jobs.apply')->middleware('auth');
 Route::get('publish', [JobController::class, 'publishNewJob'])->name('jobs.publish')->middleware('auth');

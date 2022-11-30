@@ -1,4 +1,3 @@
-
 <footer class="max-w-6xl mb-8 mx-auto mt-20 px-2 sm:px-6 lg:px-8">
     <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8">
     <div class="sm:flex sm:items-center sm:justify-between">

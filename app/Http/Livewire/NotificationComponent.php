@@ -9,7 +9,7 @@ class NotificationComponent extends Component
     public $notifications, $count;
 
     public function mount(){
-        $this->notifications = auth()->user()->notifications;
+        $this->notifications = auth()->user()->notifications->take(5);
         $this->count = auth()->user()->unreadNotifications->count();
     }
 
@@ -19,6 +19,7 @@ class NotificationComponent extends Component
     }
 
     public function read($notification_id){
+        
         $notification = auth()->user()->notifications()->findOrFail($notification_id);
         $notification->markAsRead();
     }

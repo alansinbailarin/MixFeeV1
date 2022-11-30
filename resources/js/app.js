@@ -1,5 +1,5 @@
 import "./bootstrap";
-import "./chat";
+// import "./chat";
 
 import Alpine from "alpinejs";
 

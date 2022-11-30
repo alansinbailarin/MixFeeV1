@@ -15,6 +15,7 @@ use PDF;
 class JobController extends Controller
 {
     public function publishNewJob(){
+
         return view('jobs.publish');
     }
 

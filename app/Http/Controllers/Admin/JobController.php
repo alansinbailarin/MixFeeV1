@@ -98,7 +98,7 @@ class JobController extends Controller
         $job->update($request->all());
         
         if ($request->tags) {
-            $job->tags()->attach($request->tags);
+            $job->tags()->sync($request->tags);
         }
 
         return redirect()->route('admin.jobs.edit', $job)->with('success', 'Trabajo actualizado con exito');

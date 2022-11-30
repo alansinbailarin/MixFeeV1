@@ -46,7 +46,7 @@
                         </div>
                         <div class="mt-5">
                             <p class="text-gray-500 font-semibold">Sitio web de la empresa</p>
-                            <a href="{{$job->company_url}}" class="text-blue-400">{{$job->company_url}}</a>
+                            <a href="{{$job->company_url}}" class="text-blue-400 break-all">{{$job->company_url}}</a>
                         </div>
                     </div>
                     <div class="mt-5">

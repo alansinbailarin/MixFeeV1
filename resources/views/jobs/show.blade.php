@@ -18,7 +18,7 @@
                             </figure>
                             <div class="flex-1">
                                 <a href="#" class="font-semibold text-blue-500 text-base">{{ $job->user->name}}</a>
-                                <p class="text-gray-400" href="">{{ $job->user->current_job}}</p>
+                                <p class="text-gray-400">{{ $job->user->current_job}}</p>
                             </div>
                         </div>
                         <div class="md:hidden">
@@ -33,7 +33,7 @@
                             <div class="mt-5">
                                 <p class="text-gray-500 font-semibold">Especialidades</p>
                                 @foreach ($job->tags as $tag)
-                                    <a href="{{route('jobs.tag', $tag)}}" class="text-sm bg-blue-50 py-1 px-4 rounded-full text-blue-300 mt-2 inline-block">{{ $tag->name }}</a>
+                                    <a href="{{route('jobs.tag', $tag)}}" class="mt-4 text-sm font-medium bg-violet-100 py-1 px-4 rounded-md text-violet-500 inline-block">{{ $tag->name }}</a>
                                 @endforeach                        
                             </div>
                             <div class="mt-5">
@@ -50,7 +50,7 @@
                             </div>
                             <div class="mt-5">
                                 <p class="text-gray-500 font-semibold">Sitio web de la empresa</p>
-                                <a href="{{$job->company_url}}" class="text-blue-400">{{$job->company_url}}</a>
+                                <a href="{{$job->company_url}}" class="text-blue-400 break-all">{{$job->company_url}}</a>
                             </div>
                         </div>
                         <div class="mt-5">
@@ -134,7 +134,7 @@
                         <div class="mt-5">
                             <p class="text-gray-500 font-semibold">Especialidades</p>
                             @foreach ($job->tags as $tag)
-                                <a href="{{route('jobs.tag', $tag)}}" class="text-sm bg-blue-50 py-1 px-4 rounded-full text-blue-300 mt-2 inline-block">#{{ $tag->name }}</a>
+                                <a href="{{route('jobs.tag', $tag)}}" class="mt-4 text-sm font-medium bg-violet-100 py-1 px-4 rounded-md text-violet-500 inline-block">#{{ $tag->name }}</a>
                             @endforeach                        
                         </div>
                         <div class="mt-5">
@@ -155,7 +155,7 @@
                         </div>
                         <div class="mt-5">
                             <p class="text-gray-500 font-semibold">Sitio web de la empresa</p>
-                            <a href="{{$job->company_url}}" class="text-blue-400">{{$job->company_url}}</a>
+                            <a href="{{$job->company_url}}" class="text-blue-400 break-all">{{$job->company_url}}</a>
                         </div>
                     </div>
                 </section>
