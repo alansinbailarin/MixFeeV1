@@ -36,6 +36,15 @@
           </div>
         </div>
         @auth
+        <a id="messageLink" href="">
+          <span id="messageIcon" class="inline-flex rounded-md mr-4 hidden">
+            <button type="button" class="bg-gray-100 text-sm text-gray-400 transition ease-in-out delay-150 rounded-full inline-flex items-center px-3 py-2 border border-transparent hover:bg-gray-200">
+                <span class="relative inline-block">
+                  <img class="opacity-70" src="https://img.icons8.com/material-rounded/24/null/filled-chat.png"/>
+                  </span>                
+            </button>
+          </span>
+        </a>
         @livewire('notification-component')
         <div class="absolute inset-y-0 right-0 hidden items-center pr-2  sm:flex sm:ml-6 sm:pr-0">
           <div class="ml-3 relative" x-data="{ open: false }">

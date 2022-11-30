@@ -1,14 +1,10 @@
 <?php
 
-use App\Events\MessageSent;
 use App\Http\Controllers\ChatController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\ConsultaController;
 use App\Http\Controllers\MessageController;
-use App\Http\Controllers\MessagesController;
-use App\Http\Controllers\ProfileController;
-use Illuminate\Http\Request;
 
 Route::get('/', [JobController::class, 'index'])->name('jobs.index');
 
@@ -38,25 +34,30 @@ Route::get('publish', [JobController::class, 'publishNewJob'])->name('jobs.publi
 Route::get('profile/{id}', [JobController::class, 'showProfile'])->name('profile.user-profile');
 Route::get('cv/pdf/{id}', [JobController::class, 'pdf'])->name('profile.cv');
 
-// rutas para enviar y recibir mensages
-Route::get('message/{chat}',[ChatController::class , 'index'])->name('chat.show');
+//crear nueva sala de chat
 Route::get('message/with/{user}',[ChatController::class , 'chat_with'])->name('chat.with');
-Route::post('message/sent',[MessagesController::class, 'sent'])->name('message.sent');
+//obtener todos los chat de una sala
+Route::get('message/{chat}',[ChatController::class , 'index'])->name('chat.show');
 
-
-//user auth para mensajes
+/***************************API CHAT *****************************/
+//guardar chat
+Route::post('message/sent',[ChatController::class, 'sent'])->name('message.sent');
+//obtiene la session actual
 Route::get('auth/user', function(){
     if(auth()->check()){
         return response()->json([
             'authUser' => auth()->user()
         ]);
-
         return null;
     }
 });
-
-// get users in chat
+Route::get('message/{chat}/get_messages',[ChatController::class , 'get_message'])->name('chat.get_messages');
+// obtiene todos los usuarios involucrados en una sala de chat
 Route::get('message/{chat}/get_user',[ChatController::class , 'get_users'])->name('chat.get_user');
 
 //get all messages from chat
-Route::get('message/{chat}/get_messages',[ChatController::class , 'get_message'])->name('chat.get_messages');
+Route::get('api/contacts',[ChatController::class , 'get_contacts'])->name('chat.get_contacts');
+
+
+// Route::get('message/join/{users}',[ChatController::class , 'chat_with'])->name('chat.with');
+Route::get('api/groups',[ChatController::class , 'get_groups'])->name('chat.get_groups');
